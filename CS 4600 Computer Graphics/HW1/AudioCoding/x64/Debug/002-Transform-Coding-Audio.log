@@ -1,0 +1,4 @@
+﻿  main.cpp
+c:\users\aaron\documents\cs 4600\hw1\audiocoding\main.cpp(68): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\aaron\documents\cs 4600\hw1\audiocoding\main.cpp(98): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+  002-Transform-Coding-Audio.vcxproj -> C:\Users\aaron\Documents\CS 4600\HW1\AudioCoding\x64\Debug\002-Transform-Coding-Audio.exe

@@ -1,0 +1,7 @@
+C:\Users\aaron\Documents\CS 3500\PS1_Templeton_Aaron\LowerCase\obj\Debug\LowerCase.csproj.CoreCompileInputs.cache
+C:\Users\aaron\Documents\CS 3500\PS1_Templeton_Aaron\LowerCase\bin\Debug\LowerCase.exe.config
+C:\Users\aaron\Documents\CS 3500\PS1_Templeton_Aaron\LowerCase\bin\Debug\LowerCase.exe
+C:\Users\aaron\Documents\CS 3500\PS1_Templeton_Aaron\LowerCase\bin\Debug\LowerCase.pdb
+C:\Users\aaron\Documents\CS 3500\PS1_Templeton_Aaron\LowerCase\obj\Debug\LowerCase.exe
+C:\Users\aaron\Documents\CS 3500\PS1_Templeton_Aaron\LowerCase\obj\Debug\LowerCase.pdb
+C:\Users\aaron\Documents\CS 3500\PS1_Templeton_Aaron\LowerCase\obj\Debug\LowerCase.csprojResolveAssemblyReference.cache

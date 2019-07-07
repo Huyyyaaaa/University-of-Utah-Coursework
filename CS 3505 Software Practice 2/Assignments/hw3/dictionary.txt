@@ -1,0 +1,7 @@
+apple
+app
+dog
+dogs
+cat
+cats
+catch

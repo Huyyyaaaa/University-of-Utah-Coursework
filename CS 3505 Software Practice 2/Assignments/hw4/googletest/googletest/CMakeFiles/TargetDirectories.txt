@@ -1,0 +1,4 @@
+/home/aaron/Documents/HW/hw4/googletest/googletest/CMakeFiles/rebuild_cache.dir
+/home/aaron/Documents/HW/hw4/googletest/googletest/CMakeFiles/gtest.dir
+/home/aaron/Documents/HW/hw4/googletest/googletest/CMakeFiles/edit_cache.dir
+/home/aaron/Documents/HW/hw4/googletest/googletest/CMakeFiles/gtest_main.dir

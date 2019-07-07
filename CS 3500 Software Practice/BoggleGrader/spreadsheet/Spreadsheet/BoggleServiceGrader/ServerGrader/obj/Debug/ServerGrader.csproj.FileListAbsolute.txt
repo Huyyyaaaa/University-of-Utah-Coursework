@@ -1,0 +1,11 @@
+C:\Users\aaron\Documents\CS 3500\BoggleGrader\spreadsheet\Spreadsheet\BoggleServiceGrader\ServerGrader\bin\Debug\dictionary.txt
+C:\Users\aaron\Documents\CS 3500\BoggleGrader\spreadsheet\Spreadsheet\BoggleServiceGrader\ServerGrader\bin\Debug\ServerGrader.dll
+C:\Users\aaron\Documents\CS 3500\BoggleGrader\spreadsheet\Spreadsheet\BoggleServiceGrader\ServerGrader\bin\Debug\ServerGrader.pdb
+C:\Users\aaron\Documents\CS 3500\BoggleGrader\spreadsheet\Spreadsheet\BoggleServiceGrader\ServerGrader\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\aaron\Documents\CS 3500\BoggleGrader\spreadsheet\Spreadsheet\BoggleServiceGrader\ServerGrader\bin\Debug\Newtonsoft.Json.dll
+C:\Users\aaron\Documents\CS 3500\BoggleGrader\spreadsheet\Spreadsheet\BoggleServiceGrader\ServerGrader\bin\Debug\Newtonsoft.Json.xml
+C:\Users\aaron\Documents\CS 3500\BoggleGrader\spreadsheet\Spreadsheet\BoggleServiceGrader\ServerGrader\obj\Debug\ServerGrader.csprojResolveAssemblyReference.cache
+C:\Users\aaron\Documents\CS 3500\BoggleGrader\spreadsheet\Spreadsheet\BoggleServiceGrader\ServerGrader\obj\Debug\ServerGrader.csproj.CoreCompileInputs.cache
+C:\Users\aaron\Documents\CS 3500\BoggleGrader\spreadsheet\Spreadsheet\BoggleServiceGrader\ServerGrader\obj\Debug\ServerGrader.csproj.CopyComplete
+C:\Users\aaron\Documents\CS 3500\BoggleGrader\spreadsheet\Spreadsheet\BoggleServiceGrader\ServerGrader\obj\Debug\ServerGrader.dll
+C:\Users\aaron\Documents\CS 3500\BoggleGrader\spreadsheet\Spreadsheet\BoggleServiceGrader\ServerGrader\obj\Debug\ServerGrader.pdb

@@ -1,0 +1,6 @@
+C:\Users\aaron\Documents\CS 3500\PS1_Templeton_Aaron\Palindrome\bin\Debug\Palindrome.exe.config
+C:\Users\aaron\Documents\CS 3500\PS1_Templeton_Aaron\Palindrome\bin\Debug\Palindrome.exe
+C:\Users\aaron\Documents\CS 3500\PS1_Templeton_Aaron\Palindrome\bin\Debug\Palindrome.pdb
+C:\Users\aaron\Documents\CS 3500\PS1_Templeton_Aaron\Palindrome\obj\Debug\Palindrome.csproj.CoreCompileInputs.cache
+C:\Users\aaron\Documents\CS 3500\PS1_Templeton_Aaron\Palindrome\obj\Debug\Palindrome.exe
+C:\Users\aaron\Documents\CS 3500\PS1_Templeton_Aaron\Palindrome\obj\Debug\Palindrome.pdb

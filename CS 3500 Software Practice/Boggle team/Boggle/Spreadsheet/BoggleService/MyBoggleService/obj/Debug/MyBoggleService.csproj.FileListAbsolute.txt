@@ -1,0 +1,13 @@
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\Spreadsheet\BoggleService\MyBoggleService\bin\Debug\dictionary.txt
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\Spreadsheet\BoggleService\MyBoggleService\bin\Debug\MyBoggleService.exe.config
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\Spreadsheet\BoggleService\MyBoggleService\bin\Debug\MyBoggleService.exe
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\Spreadsheet\BoggleService\MyBoggleService\bin\Debug\MyBoggleService.pdb
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\Spreadsheet\BoggleService\MyBoggleService\obj\Debug\MyBoggleService.csprojResolveAssemblyReference.cache
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\Spreadsheet\BoggleService\MyBoggleService\obj\Debug\MyBoggleService.csproj.CoreCompileInputs.cache
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\Spreadsheet\BoggleService\MyBoggleService\obj\Debug\MyBoggleService.exe
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\Spreadsheet\BoggleService\MyBoggleService\obj\Debug\MyBoggleService.pdb
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\Spreadsheet\BoggleService\MyBoggleService\bin\Debug\Newtonsoft.Json.dll
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\Spreadsheet\BoggleService\MyBoggleService\bin\Debug\SS.dll
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\Spreadsheet\BoggleService\MyBoggleService\bin\Debug\Newtonsoft.Json.xml
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\Spreadsheet\BoggleService\MyBoggleService\bin\Debug\SS.xml
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\Spreadsheet\BoggleService\MyBoggleService\obj\Debug\MyBoggleService.csproj.CopyComplete

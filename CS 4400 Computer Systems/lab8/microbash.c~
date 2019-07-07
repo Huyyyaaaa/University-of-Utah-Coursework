@@ -1,0 +1,25 @@
+#include <unistd.h>
+#include <stdlib.h>
+
+int main()
+{
+  char* writer_args[] = {"./writer", NULL};
+  char* reader_args[] = {"./reader", NULL};
+ 
+  // First child
+  if (fork() == 0) {
+    if(execv(writer_args[0], writer_args) == -1)
+      exit(1);
+  }
+  // Second child
+  if (fork() == 0) {
+    if(execv(reader_args[0], reader_args) == -1)
+      exit(1);
+  }
+
+  // Parent
+  int status;
+  wait(&status);
+  wait(&status);
+}
+

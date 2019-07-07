@@ -1,0 +1,12 @@
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\Boggle\bin\Debug\Boggle.exe.config
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\Boggle\bin\Debug\Boggle.exe
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\Boggle\bin\Debug\Boggle.pdb
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\Boggle\obj\Debug\BoggleClient.csprojResolveAssemblyReference.cache
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\Boggle\obj\Debug\Boggle.Boggle.resources
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\Boggle\obj\Debug\Boggle.Properties.Resources.resources
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\Boggle\obj\Debug\BoggleClient.csproj.GenerateResource.Cache
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\Boggle\obj\Debug\BoggleClient.csproj.CoreCompileInputs.cache
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\Boggle\obj\Debug\Boggle.exe
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\Boggle\obj\Debug\Boggle.pdb
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\Boggle\bin\Debug\Newtonsoft.Json.dll
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\Boggle\bin\Debug\Newtonsoft.Json.xml

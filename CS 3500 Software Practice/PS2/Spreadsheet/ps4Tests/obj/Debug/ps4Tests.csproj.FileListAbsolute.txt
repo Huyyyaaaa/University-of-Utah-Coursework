@@ -1,0 +1,15 @@
+C:\Users\aaron\Documents\CS 3500\PS2\Spreadsheet\ps4Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\aaron\Documents\CS 3500\PS2\Spreadsheet\ps4Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\aaron\Documents\CS 3500\PS2\Spreadsheet\ps4Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\aaron\Documents\CS 3500\PS2\Spreadsheet\ps4Tests\bin\Debug\ps4Tests.dll
+C:\Users\aaron\Documents\CS 3500\PS2\Spreadsheet\ps4Tests\bin\Debug\ps4Tests.pdb
+C:\Users\aaron\Documents\CS 3500\PS2\Spreadsheet\ps4Tests\bin\Debug\Formula.dll
+C:\Users\aaron\Documents\CS 3500\PS2\Spreadsheet\ps4Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\aaron\Documents\CS 3500\PS2\Spreadsheet\ps4Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\aaron\Documents\CS 3500\PS2\Spreadsheet\ps4Tests\bin\Debug\Formula.pdb
+C:\Users\aaron\Documents\CS 3500\PS2\Spreadsheet\ps4Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\aaron\Documents\CS 3500\PS2\Spreadsheet\ps4Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\aaron\Documents\CS 3500\PS2\Spreadsheet\ps4Tests\obj\Debug\ps4Tests.csprojResolveAssemblyReference.cache
+C:\Users\aaron\Documents\CS 3500\PS2\Spreadsheet\ps4Tests\obj\Debug\ps4Tests.csproj.CoreCompileInputs.cache
+C:\Users\aaron\Documents\CS 3500\PS2\Spreadsheet\ps4Tests\obj\Debug\ps4Tests.dll
+C:\Users\aaron\Documents\CS 3500\PS2\Spreadsheet\ps4Tests\obj\Debug\ps4Tests.pdb

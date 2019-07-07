@@ -1,0 +1,14 @@
+C:\Users\aaron\Documents\CS 5530\ChessBrowser\ChessBrowser\ChessBrowser\bin\Debug\ChessBrowser.exe.config
+C:\Users\aaron\Documents\CS 5530\ChessBrowser\ChessBrowser\ChessBrowser\bin\Debug\ChessBrowser.exe
+C:\Users\aaron\Documents\CS 5530\ChessBrowser\ChessBrowser\ChessBrowser\bin\Debug\ChessBrowser.pdb
+C:\Users\aaron\Documents\CS 5530\ChessBrowser\ChessBrowser\ChessBrowser\bin\Debug\ChessTools.dll
+C:\Users\aaron\Documents\CS 5530\ChessBrowser\ChessBrowser\ChessBrowser\bin\Debug\MySql.Data.dll
+C:\Users\aaron\Documents\CS 5530\ChessBrowser\ChessBrowser\ChessBrowser\bin\Debug\ChessTools.pdb
+C:\Users\aaron\Documents\CS 5530\ChessBrowser\ChessBrowser\ChessBrowser\obj\Debug\ChessBrowser.csprojAssemblyReference.cache
+C:\Users\aaron\Documents\CS 5530\ChessBrowser\ChessBrowser\ChessBrowser\obj\Debug\ChessBrowser.Form1.resources
+C:\Users\aaron\Documents\CS 5530\ChessBrowser\ChessBrowser\ChessBrowser\obj\Debug\ChessBrowser.Properties.Resources.resources
+C:\Users\aaron\Documents\CS 5530\ChessBrowser\ChessBrowser\ChessBrowser\obj\Debug\ChessBrowser.csproj.GenerateResource.cache
+C:\Users\aaron\Documents\CS 5530\ChessBrowser\ChessBrowser\ChessBrowser\obj\Debug\ChessBrowser.csproj.CoreCompileInputs.cache
+C:\Users\aaron\Documents\CS 5530\ChessBrowser\ChessBrowser\ChessBrowser\obj\Debug\ChessBrowser.csproj.CopyComplete
+C:\Users\aaron\Documents\CS 5530\ChessBrowser\ChessBrowser\ChessBrowser\obj\Debug\ChessBrowser.exe
+C:\Users\aaron\Documents\CS 5530\ChessBrowser\ChessBrowser\ChessBrowser\obj\Debug\ChessBrowser.pdb

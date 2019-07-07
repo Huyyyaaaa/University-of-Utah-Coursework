@@ -1,0 +1,10 @@
+C:\Users\aaron\Documents\CS 3500\TipCalculator\TipCalculator\bin\Debug\TipCalculator.exe.config
+C:\Users\aaron\Documents\CS 3500\TipCalculator\TipCalculator\bin\Debug\TipCalculator.exe
+C:\Users\aaron\Documents\CS 3500\TipCalculator\TipCalculator\bin\Debug\TipCalculator.pdb
+C:\Users\aaron\Documents\CS 3500\TipCalculator\TipCalculator\obj\Debug\TipCalculator.csprojResolveAssemblyReference.cache
+C:\Users\aaron\Documents\CS 3500\TipCalculator\TipCalculator\obj\Debug\TipCalculator.Properties.Resources.resources
+C:\Users\aaron\Documents\CS 3500\TipCalculator\TipCalculator\obj\Debug\TipCalculator.csproj.GenerateResource.Cache
+C:\Users\aaron\Documents\CS 3500\TipCalculator\TipCalculator\obj\Debug\TipCalculator.csproj.CoreCompileInputs.cache
+C:\Users\aaron\Documents\CS 3500\TipCalculator\TipCalculator\obj\Debug\TipCalculator.exe
+C:\Users\aaron\Documents\CS 3500\TipCalculator\TipCalculator\obj\Debug\TipCalculator.pdb
+C:\Users\aaron\Documents\CS 3500\TipCalculator\TipCalculator\obj\Debug\TipCalculator.TipCalc.resources

@@ -1,0 +1,15 @@
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\Spreadsheet\BoggleService\BoggleServiceTests\bin\Debug\UnitTestProject1.dll
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\Spreadsheet\BoggleService\BoggleServiceTests\bin\Debug\UnitTestProject1.pdb
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\Spreadsheet\BoggleService\BoggleServiceTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\Spreadsheet\BoggleService\BoggleServiceTests\bin\Debug\Newtonsoft.Json.dll
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\Spreadsheet\BoggleService\BoggleServiceTests\bin\Debug\Newtonsoft.Json.xml
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\Spreadsheet\BoggleService\BoggleServiceTests\obj\Debug\BoggleServiceTests.csprojResolveAssemblyReference.cache
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\Spreadsheet\BoggleService\BoggleServiceTests\obj\Debug\Boggle.Properties.Resources.resources
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\Spreadsheet\BoggleService\BoggleServiceTests\obj\Debug\BoggleServiceTests.csproj.GenerateResource.Cache
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\Spreadsheet\BoggleService\BoggleServiceTests\obj\Debug\BoggleServiceTests.csproj.CoreCompileInputs.cache
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\Spreadsheet\BoggleService\BoggleServiceTests\obj\Debug\UnitTestProject1.dll
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\Spreadsheet\BoggleService\BoggleServiceTests\obj\Debug\UnitTestProject1.pdb
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\Spreadsheet\BoggleService\BoggleServiceTests\obj\Debug\BoggleServiceTests.csproj.CopyComplete
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\Spreadsheet\BoggleService\BoggleServiceTests\bin\Debug\BoggleService.dll
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\Spreadsheet\BoggleService\BoggleServiceTests\bin\Debug\BoggleService.pdb
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\Spreadsheet\BoggleService\BoggleServiceTests\bin\Debug\BoggleService.dll.config

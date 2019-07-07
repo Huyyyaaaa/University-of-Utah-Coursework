@@ -1,0 +1,582 @@
+/*
+ * friendlist.c - [Starting code for] a web-based friend-graph manager.
+ *
+ * Based on:
+ *  tiny.c - A simple, iterative HTTP/1.0 Web server that uses the 
+ *      GET method to serve static and dynamic content.
+ *   Tiny Web server
+ *   Dave O'Hallaron
+ *   Carnegie Mellon University
+ */
+#include "csapp.h"
+#include "dictionary.h"
+#include "more_string.h"
+
+static void doit(int fd);
+static dictionary_t *read_requesthdrs(rio_t *rp);
+static void read_postquery(rio_t *rp, dictionary_t *headers, dictionary_t *d);
+static void clienterror(int fd, char *cause, char *errnum, 
+                        char *shortmsg, char *longmsg);
+static void print_stringdictionary(dictionary_t *d);
+static void friends_request(int fd, dictionary_t *query);
+static void befriend_request(int fd, dictionary_t* query);
+static void unfriend_request(int fd, dictionary_t* query);
+static void introduce_request(int fd, dictionary_t* query);
+static void *thread_doit(void *connfdp);
+
+dictionary_t* friends;
+pthread_mutex_t m;
+
+int main(int argc, char **argv) 
+{
+  int listenfd, connfd;
+  char hostname[MAXLINE], port[MAXLINE];
+  socklen_t clientlen;
+  struct sockaddr_storage clientaddr;
+
+  /* Check command line args */
+  if (argc != 2) {
+    fprintf(stderr, "usage: %s <port>\n", argv[0]);
+    exit(1);
+  }
+  
+  pthread_mutex_init(&m, NULL);
+  listenfd = Open_listenfd(argv[1]);
+  friends =(dictionary_t*)make_dictionary(COMPARE_CASE_SENS,free);
+
+  
+
+
+  /* Don't kill the server if there's an error, because
+     we want to survive errors due to a client. But we
+     do want to report errors. */
+  exit_on_error(0);
+
+  /* Also, don't stop on broken connections: */
+  Signal(SIGPIPE, SIG_IGN);
+
+  while (1) {
+    clientlen = sizeof(clientaddr);
+    connfd = Accept(listenfd, (SA *)&clientaddr, &clientlen);
+    if (connfd >= 0) {
+      Getnameinfo((SA *) &clientaddr, clientlen, hostname, MAXLINE, 
+                  port, MAXLINE, 0);
+      printf("Accepted connection from (%s, %s)\n", hostname, port);
+
+      int *cfdp;
+      pthread_t p;
+      cfdp = malloc(sizeof(int));
+      *cfdp = connfd;
+      Pthread_create(&p, NULL, thread_doit, cfdp);
+      Pthread_detach(p);
+    }
+  }
+}
+
+void *thread_doit(void *connfdp)
+{
+  int connfd = *(int *)connfdp;
+  free(connfdp);
+  doit(connfd);
+  Close(connfd);
+  return NULL;
+}
+
+/*
+ * doit - handle one HTTP request/response transaction
+ */
+void doit(int fd) 
+{
+  char buf[MAXLINE], *method, *uri, *version;
+  rio_t rio;
+  dictionary_t *headers, *query;
+
+  /* Read request line and headers */
+  Rio_readinitb(&rio, fd);
+  if (Rio_readlineb(&rio, buf, MAXLINE) <= 0)
+    return;
+  printf("%s", buf);
+  
+  if (!parse_request_line(buf, &method, &uri, &version)) {
+    clienterror(fd, method, "400", "Bad Request",
+                "Friendlist did not recognize the request");
+  } else {
+    if (strcasecmp(version, "HTTP/1.0")
+        && strcasecmp(version, "HTTP/1.1")) {
+      clienterror(fd, version, "501", "Not Implemented",
+                  "Friendlist does not implement that version");
+    } else if (strcasecmp(method, "GET")
+               && strcasecmp(method, "POST")) {
+      clienterror(fd, method, "501", "Not Implemented",
+                  "Friendlist does not implement that method");
+    } else {
+      headers = read_requesthdrs(&rio);
+
+      /* Parse all query arguments into a dictionary */
+      query = make_dictionary(COMPARE_CASE_SENS, free);
+      parse_uriquery(uri, query);
+      if (!strcasecmp(method, "POST"))
+        read_postquery(&rio, headers, query);
+
+      /* For debugging, print the dictionary */
+      print_stringdictionary(query);
+
+      /* You'll want to handle different queries here,
+         but the intial implementation always returns
+         nothing: */
+      if(starts_with("/friends",uri))
+	{
+	  pthread_mutex_lock(&m);
+	  friends_request(fd, query);
+	  pthread_mutex_unlock(&m);
+	}
+      else if(starts_with("/befriend",uri))
+	{
+	  pthread_mutex_lock(&m);
+	  befriend_request(fd, query);
+	  pthread_mutex_unlock(&m);
+	}
+      else if(starts_with("/unfriend",uri))
+	{
+	  pthread_mutex_lock(&m);
+	  unfriend_request(fd,query);
+	  pthread_mutex_unlock(&m);
+	}
+      else if(starts_with("/introduce",uri))
+	{
+	
+	  introduce_request(fd, query);
+	
+	}
+      /* Clean up */
+      free_dictionary(query);
+      free_dictionary(headers);
+    }
+
+    /* Clean up status line */
+    free(method);
+    free(uri);
+    free(version);
+  }
+}
+
+/*
+ * read_requesthdrs - read HTTP request headers
+ */
+dictionary_t *read_requesthdrs(rio_t *rp) 
+{
+  char buf[MAXLINE];
+  dictionary_t *d = make_dictionary(COMPARE_CASE_INSENS, free);
+
+  Rio_readlineb(rp, buf, MAXLINE);
+  printf("%s", buf);
+  while(strcmp(buf, "\r\n")) {
+    Rio_readlineb(rp, buf, MAXLINE);
+    printf("%s", buf);
+    parse_header_line(buf, d);
+  }
+  
+  return d;
+}
+
+void read_postquery(rio_t *rp, dictionary_t *headers, dictionary_t *dest)
+{
+  char *len_str, *type, *buffer;
+  int len;
+  
+  len_str = dictionary_get(headers, "Content-Length");
+  len = (len_str ? atoi(len_str) : 0);
+
+  type = dictionary_get(headers, "Content-Type");
+  
+  buffer = malloc(len+1);
+  Rio_readnb(rp, buffer, len);
+  buffer[len] = 0;
+
+  if (!strcasecmp(type, "application/x-www-form-urlencoded")) {
+    parse_query(buffer, dest);
+  }
+
+  free(buffer);
+}
+
+static char *ok_header(size_t len, const char *content_type) {
+  char *len_str, *header;
+  
+  header = append_strings("HTTP/1.0 200 OK\r\n",
+                          "Server: Friendlist Web Server\r\n",
+                          "Connection: close\r\n",
+                          "Content-length: ", len_str = to_string(len), "\r\n",
+                          "Content-type: ", content_type, "\r\n\r\n",
+                          NULL);
+  free(len_str);
+
+  return header;
+}
+
+
+/*
+ * clienterror - returns an error message to the client
+ */
+void clienterror(int fd, char *cause, char *errnum, 
+		 char *shortmsg, char *longmsg) 
+{
+  size_t len;
+  char *header, *body, *len_str;
+
+  body = append_strings("<html><title>Friendlist Error</title>",
+                        "<body bgcolor=""ffffff"">\r\n",
+                        errnum, " ", shortmsg,
+                        "<p>", longmsg, ": ", cause,
+                        "<hr><em>Friendlist Server</em>\r\n",
+                        NULL);
+  len = strlen(body);
+
+  /* Print the HTTP response */
+  header = append_strings("HTTP/1.0 ", errnum, " ", shortmsg, "\r\n",
+                          "Content-type: text/html; charset=utf-8\r\n",
+                          "Content-length: ", len_str = to_string(len), "\r\n\r\n",
+                          NULL);
+  free(len_str);
+  
+  Rio_writen(fd, header, strlen(header));
+  Rio_writen(fd, body, len);
+
+  free(header);
+  free(body);
+}
+
+static void print_stringdictionary(dictionary_t *d)
+{
+  int i, count;
+
+  count = dictionary_count(d);
+  for (i = 0; i < count; i++) {
+    printf("%s=%s\n",
+           dictionary_key(d, i),
+           (const char *)dictionary_value(d, i));
+  }
+  printf("\n");
+}
+
+static void friends_request(int fd, dictionary_t *query)
+{
+  size_t length;
+  char *body, *header;
+
+  if(dictionary_count(query) !=1)
+    {
+      clienterror(fd, "GET", "400", "Bad Request", "requires a user");
+    }
+
+  const char *user = dictionary_get(query, "user");
+  body = "";
+
+  if(user == NULL)
+    {
+      clienterror(fd, "GET", "400", "Bad Request", "Invalid user");
+    }
+  
+  dictionary_t *t = dictionary_get(friends, user);
+      
+  if(t != NULL)
+    {
+	  
+     const char **friends_list = dictionary_keys(t);
+      body = join_strings(friends_list, '\n');
+    }
+
+  length = strlen(body);
+
+  /* Send response headers to client */
+  header = ok_header(length, "text/http; charset=utf-8");
+  Rio_writen(fd, header, strlen(header));
+  printf("Response headers:\n");
+  printf("%s", header);
+
+  free(header);
+
+  /* Send response body to client */
+  Rio_writen(fd, body, length);
+ 
+   
+}
+
+static void befriend_request(int fd, dictionary_t *query)
+{
+  size_t length;
+  char *body, *header;
+
+  if(query == NULL)
+    {
+      clienterror(fd, "POST", "400", "Bad Request", "query is empty");
+      return;
+    }
+
+  if(dictionary_count(query)!=2)
+    {
+      clienterror(fd, "POST", "400", "Bad Request", "not enough query arguments");
+
+    }
+
+
+  const char* user = (char*)dictionary_get(query, "user");
+  if(user == NULL)
+    {
+      dictionary_t* newu = (dictionary_t*)make_dictionary(0, free);
+      dictionary_set(friends, user, newu);
+    }
+
+  dictionary_t* realuser = (dictionary_t*)dictionary_get(friends, user);
+  if(realuser == NULL)
+    {
+      realuser = (dictionary_t*)make_dictionary(0, free);
+      dictionary_set(friends, user, realuser);
+    }
+
+  char** newf = split_string((char*)dictionary_get(query, "friends"), '\n');
+  if(newf == NULL)
+    {
+      clienterror(fd, "POST", "400", "Bad Request", "friends are invalid");
+    }
+
+  int i;
+  for(i = 0; newf[i] != NULL; ++i)
+    {
+      if(strcmp(newf[i], user) == 0) continue;
+      
+      dictionary_t* f = (dictionary_t*)dictionary_get(friends, user);
+      if(f == NULL)
+	{
+	  f = (dictionary_t*)make_dictionary(0,free);
+	  dictionary_set(friends, user, f);
+	}
+      if(dictionary_get(f, newf[i]) == NULL)
+	{
+	  dictionary_set(f, newf[i], NULL);
+	}
+
+      dictionary_t* newFR = (dictionary_t*)dictionary_get(friends,newf[i]);
+      if(newFR == NULL)
+	{
+	  newFR = (dictionary_t*)make_dictionary(COMPARE_CASE_SENS,free);
+	  dictionary_set(friends, newf[i], newFR);
+	}
+      if(dictionary_get(newFR,user) == NULL)
+	{
+	  dictionary_set(newFR,user, NULL);
+	}
+    }
+
+  realuser = (dictionary_t*)dictionary_get(friends, user);
+  const char** names = dictionary_keys(realuser);
+  body = join_strings(names, '\n');
+  
+  length = strlen(body);
+
+  
+  /* Send response headers to client */
+  header = ok_header(length, "text/http; charset=utf-8");
+  Rio_writen(fd, header, strlen(header));
+  printf("Response headers:\n");
+  printf("%s", header);
+
+  free(header);
+
+  /* Send response body to client */
+  Rio_writen(fd, body, length);
+}
+
+static void unfriend_request(int fd, dictionary_t *query)
+{
+  size_t length;
+  char *body, *header;
+
+  if(dictionary_count(query)!=2)
+    {
+      clienterror(fd, "POST", "400", "Bad Request", "not enough query arguments");
+    }
+
+  const char* user = (char*)dictionary_get(query, "user");
+
+  if(user == NULL)
+    {
+      clienterror(fd, "POST", "400", "Bad Request", "invalid user");
+    }
+  
+  dictionary_t* us = (dictionary_t*)dictionary_get(friends, user);
+  if(us == NULL)
+    {
+      clienterror(fd, "POST", "400", "Bad Request", "User does not exist");
+    }
+
+  char** list = split_string((char*)dictionary_get(query, "friends"), '\n');
+  if(list == NULL)
+    {
+      clienterror(fd, "GET", "400", "Bad Request", "no friends");
+    }
+
+  int i;
+  for(i=0; list[i] != NULL; ++i)
+    {
+      dictionary_remove(us, list[i]);
+      dictionary_t* fr = (dictionary_t*)dictionary_get(friends, list[i]);
+      if(fr != NULL)
+	{
+	  dictionary_remove(fr, user);
+	}
+
+    }
+  
+  us = (dictionary_t*)dictionary_get(friends, user);
+  const char** names = dictionary_keys(us);
+  body = join_strings(names, '\n');
+
+  length = strlen(body);
+
+  /* Send response headers to client */
+  header = ok_header(length, "text/http; charset=utf-8");
+  Rio_writen(fd, header, strlen(header));
+  printf("Response headers:\n");
+  printf("%s", header);
+
+  free(header);
+
+  /* Send response body to client */
+  Rio_writen(fd, body, length);
+
+}
+
+static void introduce_request(int fd, dictionary_t *query)
+{
+  
+  size_t length;
+  char *body, *header;
+  
+  if(dictionary_count(query)!=4)
+    {
+      clienterror(fd, "POST", "400", "Bad Request", "invalid query arguments");
+      return;
+    }
+
+ const char *user = dictionary_get(query, "user");
+ const char *friend = dictionary_get(query, "friend");
+ char* host = (char *)dictionary_get(query, "host");
+ char* port = (char *)dictionary_get(query, "port");
+
+  if(!user || !friend || !host || !port)
+    {
+      clienterror(fd, "POST", "400", "Bad Request", "invalid query arguments");
+      return;
+    }
+
+  body = "";
+  
+  char buffer[MAXBUF];
+  int cfd = Open_clientfd(host, port);
+  sprintf(buffer, "GET /friends?user=%s HTTP/1.1\r\n\r\n", query_encode(friend));
+  Rio_writen(cfd, buffer, strlen(buffer));
+  Shutdown(cfd, SHUT_WR);
+
+  char rbuffer[MAXLINE];
+  rio_t rio;
+  Rio_readinitb(&rio, cfd);
+  printf("HERE 1\n");
+  if(Rio_readlineb(&rio, rbuffer, MAXLINE) <= 0)
+    clienterror(fd, "POST", "400", "Bad Request", "unable to read");
+
+  char *status, *ver, *desc;
+  if(!parse_status_line(rbuffer, &ver, &status, &desc))
+    {
+    clienterror(fd, "GET", "400", "Bad Request", "no status");
+    }
+  else
+    {
+      if(strcasecmp(ver, "HTTP/1.0") && strcasecmp(ver, "HTTP/1.1"))
+	{
+	  clienterror(fd, ver, "501", "No Method", "server does not have that method");
+	}
+       else if(strcasecmp(status, "200") && strcasecmp(desc, "OK"))
+      {
+	   clienterror(fd, status, "501", "No Method", "received status other than OK");
+      }
+      else
+	{
+	  dictionary_t *headers = read_requesthdrs(&rio);
+	  char *len = dictionary_get(headers, "Content-length");
+	  printf("HERE 2\n");
+	  int l = (len ? atoi(len) : 0 );
+	  char buf[l];
+	  if(l <=0)
+	    {
+	      clienterror(fd, "GET", "400", "Bad Request", "nothing received");
+	    }
+	  else
+	    {
+	      Rio_readnb(&rio, buf, l);
+	      buf[l] = 0;
+	      pthread_mutex_lock(&m);
+	      
+	      dictionary_t *u = dictionary_get(friends, user);
+	      if(u == NULL)
+		{
+		  u = make_dictionary(0,NULL);
+		  dictionary_set(friends, user, u);
+		}
+	      char** newfriends = split_string(buf, '\n');
+	      
+	      
+	      int i;
+		  for(i = 0; newfriends[i] != NULL; ++i)
+		    {
+		      if(strcmp(newfriends[i], user) == 0) continue;
+		      
+		      dictionary_t *f = (dictionary_t*)dictionary_get(friends, user);
+		      if(f == NULL)
+			{
+			  f = (dictionary_t*)make_dictionary(0, free);
+			  dictionary_set(friends, user, f);
+			}
+
+		      if(dictionary_get(f, newfriends[i])==NULL)
+			dictionary_set(f, newfriends[i], NULL);
+		      
+		      dictionary_t *fr = (dictionary_t*)dictionary_get(friends, newfriends[i]);
+		      if(fr == NULL)
+			{
+			  fr = (dictionary_t*)make_dictionary(0, free);
+			  dictionary_set(friends, newfriends[i], fr);
+			}
+
+		      if(dictionary_get(fr,user) == NULL)
+			dictionary_set(fr, user, NULL);
+
+		      free(newfriends[i]);
+		
+		    }
+		
+	      free(newfriends);
+	      const char **left = dictionary_keys(u);
+	      body = join_strings(left, '\n');
+	      pthread_mutex_unlock(&m);
+	      length = strlen(body);
+	      
+  
+	      header = ok_header(length, "text/http; charset=utf-8");
+	      Rio_writen(fd, header, strlen(header));
+	      printf("Response headers:\n");
+	      printf("%s", header);
+
+	      free(header);
+
+	      
+	      Rio_writen(fd, body, length);
+	      free(body);
+	    }
+	}
+      free(ver);
+      free(status);
+      free(desc);
+    }
+  Close(cfd);
+  }

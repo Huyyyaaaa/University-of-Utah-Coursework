@@ -1,0 +1,6 @@
+C:\Users\aaron\Documents\CS 3500\Spreadsheet Gui\PS7\Spreadsheet\Formula\bin\Debug\Formula.dll
+C:\Users\aaron\Documents\CS 3500\Spreadsheet Gui\PS7\Spreadsheet\Formula\bin\Debug\Formula.pdb
+C:\Users\aaron\Documents\CS 3500\Spreadsheet Gui\PS7\Spreadsheet\Formula\obj\Debug\Formula.csprojResolveAssemblyReference.cache
+C:\Users\aaron\Documents\CS 3500\Spreadsheet Gui\PS7\Spreadsheet\Formula\obj\Debug\Formula.csproj.CoreCompileInputs.cache
+C:\Users\aaron\Documents\CS 3500\Spreadsheet Gui\PS7\Spreadsheet\Formula\obj\Debug\Formula.dll
+C:\Users\aaron\Documents\CS 3500\Spreadsheet Gui\PS7\Spreadsheet\Formula\obj\Debug\Formula.pdb

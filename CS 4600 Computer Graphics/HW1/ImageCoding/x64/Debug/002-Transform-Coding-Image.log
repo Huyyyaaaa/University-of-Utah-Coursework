@@ -1,0 +1,4 @@
+﻿  main.cpp
+c:\users\aaron\documents\cs 4600\hw1\imagecoding\main.cpp(61): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\aaron\documents\cs 4600\hw1\imagecoding\main.cpp(102): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+  002-Transform-Coding-Image.vcxproj -> C:\Users\aaron\Documents\CS 4600\HW1\ImageCoding\x64\Debug\002-Transform-Coding-Image.exe

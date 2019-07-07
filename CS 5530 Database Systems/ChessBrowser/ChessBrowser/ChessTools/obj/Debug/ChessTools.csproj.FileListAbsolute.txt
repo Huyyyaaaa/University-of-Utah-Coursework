@@ -1,0 +1,6 @@
+C:\Users\aaron\Documents\CS 5530\ChessBrowser\ChessBrowser\ChessTools\bin\Debug\ChessTools.dll
+C:\Users\aaron\Documents\CS 5530\ChessBrowser\ChessBrowser\ChessTools\bin\Debug\ChessTools.pdb
+C:\Users\aaron\Documents\CS 5530\ChessBrowser\ChessBrowser\ChessTools\obj\Debug\ChessTools.csprojAssemblyReference.cache
+C:\Users\aaron\Documents\CS 5530\ChessBrowser\ChessBrowser\ChessTools\obj\Debug\ChessTools.csproj.CoreCompileInputs.cache
+C:\Users\aaron\Documents\CS 5530\ChessBrowser\ChessBrowser\ChessTools\obj\Debug\ChessTools.dll
+C:\Users\aaron\Documents\CS 5530\ChessBrowser\ChessBrowser\ChessTools\obj\Debug\ChessTools.pdb

@@ -1,0 +1,13 @@
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\StringSocket\GradingTester\bin\Debug\GradingTester.dll
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\StringSocket\GradingTester\bin\Debug\GradingTester.pdb
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\StringSocket\GradingTester\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\StringSocket\GradingTester\bin\Debug\SS.dll
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\StringSocket\GradingTester\bin\Debug\StringSocket.dll
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\StringSocket\GradingTester\bin\Debug\StringSocket.pdb
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\StringSocket\GradingTester\bin\Debug\StringSocket.xml
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\StringSocket\GradingTester\bin\Debug\SS.xml
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\StringSocket\GradingTester\obj\Debug\GradingTester.csprojResolveAssemblyReference.cache
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\StringSocket\GradingTester\obj\Debug\GradingTester.csproj.CoreCompileInputs.cache
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\StringSocket\GradingTester\obj\Debug\GradingTester.csproj.CopyComplete
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\StringSocket\GradingTester\obj\Debug\GradingTester.dll
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\StringSocket\GradingTester\obj\Debug\GradingTester.pdb

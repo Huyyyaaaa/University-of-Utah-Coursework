@@ -1,0 +1,7 @@
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\StringSocket\StringSocket\bin\Debug\StringSocket.XML
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\StringSocket\StringSocket\bin\Debug\StringSocket.dll
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\StringSocket\StringSocket\bin\Debug\StringSocket.pdb
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\StringSocket\StringSocket\obj\Debug\StringSocket.csprojResolveAssemblyReference.cache
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\StringSocket\StringSocket\obj\Debug\StringSocket.csproj.CoreCompileInputs.cache
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\StringSocket\StringSocket\obj\Debug\StringSocket.dll
+C:\Users\aaron\Documents\CS 3500\Boggle team\Boggle\StringSocket\StringSocket\obj\Debug\StringSocket.pdb

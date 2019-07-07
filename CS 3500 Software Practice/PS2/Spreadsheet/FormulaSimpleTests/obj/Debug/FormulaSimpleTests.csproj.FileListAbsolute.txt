@@ -1,0 +1,9 @@
+C:\Users\aaron\Documents\CS 3500\PS2\Spreadsheet\FormulaSimpleTests\bin\Debug\FormulaSimpleTests.dll
+C:\Users\aaron\Documents\CS 3500\PS2\Spreadsheet\FormulaSimpleTests\bin\Debug\FormulaSimpleTests.pdb
+C:\Users\aaron\Documents\CS 3500\PS2\Spreadsheet\FormulaSimpleTests\bin\Debug\Formula.dll
+C:\Users\aaron\Documents\CS 3500\PS2\Spreadsheet\FormulaSimpleTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\aaron\Documents\CS 3500\PS2\Spreadsheet\FormulaSimpleTests\bin\Debug\Formula.pdb
+C:\Users\aaron\Documents\CS 3500\PS2\Spreadsheet\FormulaSimpleTests\obj\Debug\FormulaSimpleTests.csprojResolveAssemblyReference.cache
+C:\Users\aaron\Documents\CS 3500\PS2\Spreadsheet\FormulaSimpleTests\obj\Debug\FormulaSimpleTests.csproj.CoreCompileInputs.cache
+C:\Users\aaron\Documents\CS 3500\PS2\Spreadsheet\FormulaSimpleTests\obj\Debug\FormulaSimpleTests.dll
+C:\Users\aaron\Documents\CS 3500\PS2\Spreadsheet\FormulaSimpleTests\obj\Debug\FormulaSimpleTests.pdb

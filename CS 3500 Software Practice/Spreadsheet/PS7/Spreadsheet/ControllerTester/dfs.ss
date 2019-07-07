@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="utf-8"?><spreadsheet IsValid="^[a-zA-Z]+[0-9]+$"><cell name="C3" contents="Xc" /></spreadsheet>

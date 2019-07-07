@@ -1,0 +1,9 @@
+C:\Users\aaron\Documents\CS 3500\PS2\Spreadsheet\TestFormulaConsole\bin\Debug\TestFormulaConsole.exe.config
+C:\Users\aaron\Documents\CS 3500\PS2\Spreadsheet\TestFormulaConsole\bin\Debug\TestFormulaConsole.exe
+C:\Users\aaron\Documents\CS 3500\PS2\Spreadsheet\TestFormulaConsole\bin\Debug\TestFormulaConsole.pdb
+C:\Users\aaron\Documents\CS 3500\PS2\Spreadsheet\TestFormulaConsole\bin\Debug\Formula.dll
+C:\Users\aaron\Documents\CS 3500\PS2\Spreadsheet\TestFormulaConsole\bin\Debug\Formula.pdb
+C:\Users\aaron\Documents\CS 3500\PS2\Spreadsheet\TestFormulaConsole\obj\Debug\TestFormulaConsole.csprojResolveAssemblyReference.cache
+C:\Users\aaron\Documents\CS 3500\PS2\Spreadsheet\TestFormulaConsole\obj\Debug\TestFormulaConsole.csproj.CoreCompileInputs.cache
+C:\Users\aaron\Documents\CS 3500\PS2\Spreadsheet\TestFormulaConsole\obj\Debug\TestFormulaConsole.exe
+C:\Users\aaron\Documents\CS 3500\PS2\Spreadsheet\TestFormulaConsole\obj\Debug\TestFormulaConsole.pdb
