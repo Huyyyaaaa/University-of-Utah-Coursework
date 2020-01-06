@@ -1,0 +1,102 @@
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\bin\Debug\netcoreapp2.2\Assignment2.deps.json
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\bin\Debug\netcoreapp2.2\Assignment2.runtimeconfig.json
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\bin\Debug\netcoreapp2.2\Assignment2.runtimeconfig.dev.json
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\bin\Debug\netcoreapp2.2\Assignment2.dll
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\bin\Debug\netcoreapp2.2\Assignment2.pdb
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\bin\Debug\netcoreapp2.2\Assignment2.Views.dll
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\bin\Debug\netcoreapp2.2\Assignment2.Views.pdb
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Assignment2.csprojAssemblyReference.cache
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Assignment2.csproj.CoreCompileInputs.cache
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Assignment2.RazorAssemblyInfo.cache
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Assignment2.RazorAssemblyInfo.cs
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Assignment2.AssemblyInfoInputs.cache
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Assignment2.AssemblyInfo.cs
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Assignment2.TagHelpers.input.cache
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Assignment2.TagHelpers.output.cache
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Assignment2.RazorCoreGenerate.cache
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\Courses\Create.g.cshtml.cs
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\Courses\Delete.g.cshtml.cs
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\Courses\Details.g.cshtml.cs
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\Courses\Edit.g.cshtml.cs
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\Courses\Index.g.cshtml.cs
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.g.cshtml.cs
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.g.cshtml.cs
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.g.cshtml.cs
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\_ViewStart.g.cshtml.cs
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Assignment2.RazorTargetAssemblyInfo.cache
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Assignment2.RazorTargetAssemblyInfo.cs
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Assignment2.Views.pdb
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Assignment2.dll
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Assignment2.pdb
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Assignment2.csproj.CopyComplete
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\bin\Debug\netcoreapp2.2\Assignment2.deps.json
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\bin\Debug\netcoreapp2.2\Assignment2.runtimeconfig.json
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\bin\Debug\netcoreapp2.2\Assignment2.runtimeconfig.dev.json
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\bin\Debug\netcoreapp2.2\Assignment2.dll
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\bin\Debug\netcoreapp2.2\Assignment2.pdb
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\bin\Debug\netcoreapp2.2\Assignment2.Views.dll
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\bin\Debug\netcoreapp2.2\Assignment2.Views.pdb
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Assignment2.csproj.CoreCompileInputs.cache
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Assignment2.RazorAssemblyInfo.cache
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Assignment2.RazorAssemblyInfo.cs
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Assignment2.AssemblyInfoInputs.cache
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Assignment2.AssemblyInfo.cs
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Assignment2.TagHelpers.input.cache
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Assignment2.TagHelpers.output.cache
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Assignment2.RazorCoreGenerate.cache
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.g.cshtml.cs
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\_ViewStart.g.cshtml.cs
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\Courses\Create.g.cshtml.cs
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\Courses\Delete.g.cshtml.cs
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\Courses\Details.g.cshtml.cs
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\Courses\Edit.g.cshtml.cs
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\Courses\Index.g.cshtml.cs
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.g.cshtml.cs
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.g.cshtml.cs
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_LoginPartial.g.cshtml.cs
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.g.cshtml.cs
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\_ViewStart.g.cshtml.cs
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Assignment2.RazorTargetAssemblyInfo.cache
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Assignment2.RazorTargetAssemblyInfo.cs
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Assignment2.Views.pdb
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Assignment2.dll
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Assignment2.pdb
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Assignment2.csproj.CopyComplete
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Assignment2.csprojAssemblyReference.cache
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\LearningOutcomes\Create.g.cshtml.cs
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\LearningOutcomes\Delete.g.cshtml.cs
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\LearningOutcomes\Details.g.cshtml.cs
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\LearningOutcomes\Edit.g.cshtml.cs
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\LearningOutcomes\Index.g.cshtml.cs
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\LearningOutcomes\ByCourse.g.cshtml.cs
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\ConfirmEmail.g.cshtml.cs
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\Login.g.cshtml.cs
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\Register.g.cshtml.cs
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\_ViewImports.g.cshtml.cs
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\_ViewImports.g.cshtml.cs
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_NoNav.g.cshtml.cs
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\UsersPermissions\Index.g.cshtml.cs
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\Common\Index.g.cshtml.cs
+C:\Users\ATempleton\source\CS4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\Common\Chair.g.cshtml.cs
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\ConfirmEmail.g.cshtml.cs
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\Login.g.cshtml.cs
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\Register.g.cshtml.cs
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\_ViewImports.g.cshtml.cs
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.g.cshtml.cs
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\_ViewImports.g.cshtml.cs
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\_ViewStart.g.cshtml.cs
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\Common\Chair.g.cshtml.cs
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\Common\Index.g.cshtml.cs
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\LearningOutcomes\ByCourse.g.cshtml.cs
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\LearningOutcomes\Create.g.cshtml.cs
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\LearningOutcomes\Delete.g.cshtml.cs
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\LearningOutcomes\Details.g.cshtml.cs
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\LearningOutcomes\Edit.g.cshtml.cs
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\LearningOutcomes\Index.g.cshtml.cs
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_LoginPartial.g.cshtml.cs
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_NoNav.g.cshtml.cs
+C:\Users\aaron\Documents\CS 4540\CS4540_Assignment_2\Assignment2\obj\Debug\netcoreapp2.2\Razor\Views\UsersPermissions\Index.g.cshtml.cs

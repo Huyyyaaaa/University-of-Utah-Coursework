@@ -1,0 +1,346 @@
+﻿@model Assignment2.Models.Course
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var x = User.Claims.Where(o => o.Value == "Admin");
+    var admin = false;
+    if (x.Count() > 0) { admin = true; }
+
+    var y = User.Claims.Where(o => o.Value == "Chair");
+    var chair = false;
+    if (y.Count() > 0) { chair = true; }
+
+}
+
+<h1>Course Details</h1>
+<h2>@(Model.name)</h2>
+@if (chair)
+{
+    <a class="btn btn-outline-primary" asp-controller="Common" asp-action="Chair">Back to List</a>
+}
+else
+{
+    <a class="btn btn-outline-primary" asp-action="Index">Back to List</a>
+}
+
+
+@if (admin)
+{
+    <a class="btn btn-outline-warning" asp-action="Edit" asp-route-id="@(Model.CourseId)">Edit Course</a>
+
+}
+
+<div class="container">
+
+    <div class="jumbotron" id="@(Model.number)">
+        <dl class="container-fluid">
+            <dt class="">
+                @Html.DisplayNameFor(model => model.name)
+            </dt>
+            <dd class="">
+                @Html.DisplayFor(model => model.name)
+            </dd>
+            <dt class="">
+                @Html.DisplayNameFor(model => model.number)
+            </dt>
+            <dd class="">
+                @Html.DisplayFor(model => model.number)
+            </dd>
+            <dt class="">
+                @Html.DisplayNameFor(model => model.professor)
+            </dt>
+            <dd class="">
+                @Html.DisplayFor(model => model.professor)
+            </dd>
+            <dt class="">
+                @Html.DisplayNameFor(model => model.department)
+            </dt>
+            <dd class="">
+                @Html.DisplayFor(model => model.department)
+            </dd>
+            <dt class="">
+                @Html.DisplayNameFor(model => model.description)
+            </dt>
+            <dd class="">
+                @Html.DisplayFor(model => model.description)
+            </dd>
+            <dt class="">
+                @Html.DisplayNameFor(model => model.semeseter)
+            </dt>
+            <dd class="">
+                @Html.DisplayFor(model => model.semeseter) @Html.DisplayFor(model => model.year)
+            </dd>
+            <dt>Course Note</dt>
+            <dd id="course-note"></dd>
+            <hr />
+            <dd>
+                <a class="btn btn-outline-primary" href="mailto:@Html.DisplayFor(model=>model.professorEmail)">Email @Html.DisplayFor(model => model.professor)</a>
+                
+                    <a class="btn btn-outline-secondary" asp-controller="LearningOutcomes" asp-action="ByCourse" asp-route-number="@(Model.number)">View Learning Outcomes</a>
+                
+            </dd>
+        </dl>
+    </div>
+</div>
+
+@section Scripts
+{ 
+    @if (chair)
+    {
+        <script type="text/javascript">
+
+            var note = "";
+            $(document).ready(function () {
+                getNote();
+                
+            })
+
+            function getNote() {
+                var cid = $(".jumbotron").attr('id');
+                $("#note").empty();
+                $.ajax({
+                    url: '/CourseNotes/ByCourse?id=' + cid,
+                    method: 'GET',
+                }).done(function (res) {
+                    console.log(res)
+                    if (res.success == true && res.note != "") {
+                        loadNote(res.note);
+                        note = res.note;
+                        console.log(note)
+                    } 
+                }).fail(function (jqXHR, textStatus, error) {
+                    console.log(error + textStatus)
+                })
+            }
+
+            function loadNote(note) {
+                var html = "";
+                html += '<a id="approve-note-btn" class="btn btn-sm btn-outline-primary" style="float:right;" href="#">Approve Note</a>';
+                html += '<p id="note">' + note.note + '</p>';
+                html += '<p class="note-status">status: ' + note.status + '</p> ';
+                html += '<p class="modified">last modified: ' + new Date(note.modifiedDate).toLocaleDateString() + ' ' + new Date(note.modifiedDate).toLocaleTimeString() + '</p>';
+                $("#course-note").html(html);
+            }
+
+            $(document).on('click', '#approve-note-btn', function (e) {
+                e.preventDefault();
+                approveNote();
+            })
+
+            function approveNote() {
+
+                var newNote = {
+                    courseNoteId: note.courseNoteId,
+                    note: note.note,
+                    status: note.status,
+                    courseNum: note.courseNum,
+                    modifiedDate: note.modifiedDate
+                };
+
+                $.ajax({
+                    url: '/CourseNotes/Approve',
+                    method: 'POST',
+                    data: JSON.stringify(newNote),
+                    dataType: 'json',
+                    contentType: 'application/json'
+                }).done(function (res) {
+                    if (res.success == true) {
+                        Swal.fire({
+                            title: "Success!",
+                            text: 'note approved successfully',
+                            type: 'success',
+                            confirmButtonText: 'Ok'
+                        })
+                    } else {
+                        Swal.fire({
+                            title: "Error!",
+                            text: 'unable to approve note',
+                            type: 'error',
+                            confirmButtonText: 'Ok'
+                        })
+
+                    }
+                    getNote();
+                }).fail(function (jqXHR, textStatus, error) {
+                    console.log(error + textStatus)
+                    Swal.fire({
+                        title: "Error!",
+                        text: 'unable to approve note',
+                        type: 'error',
+                        confirmButtonText: 'Ok'
+                    })
+                    getNote();
+                })
+
+            }
+
+        </script>
+    }
+    else
+    {
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            getNote();
+            var note = "";
+            $(document).on('click', '#edit-note-btn', function (e) {
+                e.preventDefault();
+                var note = $("#note").html();
+                $("#note").html("<textarea style='width:100%'>" + note + "</textarea>");
+                $(this).remove();
+                $("#note").append('<a id="save-btn" class="btn btn-outline-primary btn-sm" href="">Save</a>');
+                $("#note").append('<a id="cancel-btn" class="btn btn-outline-secondary btn-sm" href="">Cancel</a>');
+            })
+
+            $(document).on('click', '#cancel-btn', function (e) {
+                e.preventDefault();
+                getNote();
+            });
+
+            $(document).on('click', '#save-btn', function (e) {
+                e.preventDefault();
+                editNote();
+            });
+
+            $(document).on('click', '#add-note-btn', function (e) {
+                e.preventDefault();
+                $("#course-note").append("<textarea style='width:100%'></textarea>");
+                $(this).remove();
+                $("#course-note").append('<a id="create-btn" class="btn btn-outline-primary btn-sm" href="">Save</a>');
+                $("#course-note").append('<a id="cancel-btn" class="btn btn-outline-secondary btn-sm" href="">Cancel</a>');
+            });
+
+            $(document).on('click', '#create-btn', function (e) {
+                e.preventDefault();
+                addNote();
+            });
+        });
+            function editNote() {
+               
+                note.note = $("textarea").html();
+                var newNote = {
+                    courseNoteId: note.courseNoteId,
+                    note: $("textarea").val(),
+                    status: note.status,
+                    courseNum: note.courseNum,
+                    modifiedDate: note.modifiedDate
+                };
+                $.ajax({
+                    url: '/CourseNotes/Edit',
+                    method: 'POST',
+                    data: JSON.stringify(newNote),
+                    dataType: 'json',
+                    contentType: 'application/json'
+                }).done(function (res) {
+                    if (res.success == true) {
+                        Swal.fire({
+                            title: "Success!",
+                            text: 'note updated successfully',
+                            type: 'success',
+                            confirmButtonText: 'Ok'
+                        })
+                    } else {
+                        Swal.fire({
+                            title: "Error!",
+                            text: 'unable to update note',
+                            type: 'error',
+                            confirmButtonText: 'Ok'
+                        })
+                        
+                    }
+                    getNote();
+                }).fail(function (jqXHR, textStatus, error) {
+                    console.log(error + textStatus)
+                    Swal.fire({
+                        title: "Error!",
+                        text: 'unable to update note',
+                        type: 'error',
+                        confirmButtonText: 'Ok'
+                    })
+                    getNote();
+                })
+
+            }
+        function getNote() {
+            var cid = $(".jumbotron").attr('id');
+            $("#note").empty();
+            $.ajax({
+                url: '/CourseNotes/ByCourse?id='+cid,
+                method: 'GET',
+            }).done(function (res) {
+                console.log(res)
+                if (res.success == true && res.note != "") {
+                    loadNote(res.note);
+                    note = res.note;
+                    console.log(note)
+                } else {
+                    emptyNote();
+                }
+                }).fail(function (jqXHR, textStatus, error) {
+                    console.log(error + textStatus)
+                })
+        }
+
+        function loadNote(note) {
+            var html = "";
+            html += '<a id="edit-note-btn" class="btn btn-sm btn-outline-primary" style="float:right;" href="#">Edit Note</a>';
+            html += '<p id="note">' + note.note + '</p>';
+            html += '<p class="note-status">status: ' + note.status + '</p> ';
+            html += '<p class="modified">last modified: ' + new Date(note.modifiedDate).toLocaleDateString() + ' ' + new Date(note.modifiedDate).toLocaleTimeString() + '</p>';
+            $("#course-note").html(html);
+        }
+
+        function emptyNote() {
+            var html = '<a id="add-note-btn" class="btn btn-sm btn-outline-primary"  href="#">Add Note</a>';
+            $("#course-note").html(html);
+        }
+
+        function addNote() {
+            var newNote = {
+                note: $("textarea").val(),
+                status: 'pending',
+                courseNum: $(".jumbotron").attr('id')
+            };
+
+            $.ajax({
+                url: '/CourseNotes/Create',
+                method: 'POST',
+                data: JSON.stringify(newNote),
+                dataType: 'json',
+                contentType: 'application/json'
+            }).done(function (res) {
+                if (res.success == true) {
+                    Swal.fire({
+                        title: "Success!",
+                        text: 'note created successfully',
+                        type: 'success',
+                        confirmButtonText: 'Ok'
+                    })
+                } else {
+                    Swal.fire({
+                        title: "Error!",
+                        text: 'unable to create note',
+                        type: 'error',
+                        confirmButtonText: 'Ok'
+                    })
+
+                }
+                getNote();
+            }).fail(function (jqXHR, textStatus, error) {
+                console.log(error + textStatus)
+                Swal.fire({
+                    title: "Error!",
+                    text: 'unable to create note',
+                    type: 'error',
+                    confirmButtonText: 'Ok'
+                })
+                getNote();
+            })
+
+        }
+
+    </script>
+        }
+    }

@@ -1,0 +1,138 @@
+<!--
+  Author:    Aaron Templeton
+  Date:      8/25/2019
+  Course:    CS 4540, University of Utah, School of Computing
+  Copyright: CS 4540 and Aaron Templeton - This work may not be copied for use in Academic Coursework.
+ 
+  I, Aaron Templeton, certify that I wrote this code from scratch and did not copy it in part or whole from 
+  another source.  Any references used in the completion of the assignment are cited in my README file.
+ 
+  File Contents
+ 
+     webpage for the department chair's view of the courses and completion rates of the learning outcomes and evaluation metrics
+     of each course in the department
+-->
+
+
+<html>
+
+<head>
+    <title>Department Overview</title>
+    <link rel="stylesheet" href="default.css">
+    <meta name="Author" content="Aaron Templeton">
+    <meta name="description" content="learning outcomes of courses in the deparment chair overview">
+    <meta name="keywords" content="HTML,CSS">
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div id="main">
+        <div id="department">
+            <h1>Computer Science</h1>
+            <div id="total-percents">
+                <div>Learning Outcomes: <span style="color:green">80%</span></div>
+                <div>Evaluation Metrics: <span style="color: orange">65%</span></div>
+            </div>
+        </div>
+
+        <div id="courses">
+            <h2>Department courses</h2>
+            <div class="course">
+                <h3><a href="course.html">CS 3200 Scientific Computing</a></h3>
+                <a href="mailto:mjohnson@utah.edu">Professor Michael Johnson</a>
+                <div class="course-lo">
+                    <div class="lo-header">
+                        <div>Name</div>
+                        <div>Learning Outcome</div>
+                        <div>Evaluation Metrics</div>
+                    </div>
+                    <div class="lo">
+                        <div>Polynomial Interpolation</div>
+                        <div class="checkmark"></div>
+                        <div class="checkmark"></div>
+                    </div>
+                    <div class="lo">
+                        <div>Finite Differences</div>
+                        <div class="checkmark"></div>
+                        <div class="xmark"></div>
+                    </div>
+                    <div class="lo">
+                        <div>QR Decomposition</div>
+                        <div class="checkmark"></div>
+                        <div class="xmark"></div>
+                    </div>
+                    <div class="lo">
+                        <div>SVD for Least Squares</div>
+                        <div class="checkmark"></div>
+                        <div class="xmark"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="course">
+                <h3><a href="#">CS 4600 Computer Graphics</a></h3>
+                <a href="mailto:ssmith@utah.edu">Professor Sally Smith</a>
+                <div class="course-lo">
+                    <div class="lo-header">
+                        <div>Name</div>
+                        <div>Learning Outcome</div>
+                        <div>Evaluation Metrics</div>
+                    </div>
+                    <div class="lo">
+                        <div>DCT</div>
+                        <div class="checkmark"></div>
+                        <div class="xmark"></div>
+                    </div>
+                    <div class="lo">
+                        <div>Rasterization</div>
+                        <div class="checkmark"></div>
+                        <div class="checkmark"></div>
+                    </div>
+                    <div class="lo">
+                        <div>Character Animation</div>
+                        <div class="checkmark"></div>
+                        <div class="checkmark"></div>
+                    </div>
+                    <div class="lo">
+                        <div>Raytracing</div>
+                        <div class="checkmark"></div>
+                        <div class="xmark"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course">
+                <h3><a href="#">CS 3505 Software Practice 2</a></h3>
+                <a href="mailto:jdoe@utah.edu">Professor John Doe</a>
+                <div class="course-lo">
+                    <div class="lo-header">
+                        <div>Name</div>
+                        <div>Learning Outcome</div>
+                        <div>Evaluation Metrics</div>
+                    </div>
+                    <div class="lo">
+                        <div>C++ Basics</div>
+                        <div class="checkmark"></div>
+                        <div class="checkmark"></div>
+                    </div>
+                    <div class="lo">
+                        <div>Templates and Testing</div>
+                        <div class="checkmark"></div>
+                        <div class="checkmark"></div>
+                    </div>
+                    <div class="lo">
+                        <div>Inheritance</div>
+                        <div class="checkmark"></div>
+                        <div class="checkmark"></div>
+                    </div>
+                    <div class="lo">
+                        <div>Software Requirements</div>
+                        <div class="checkmark"></div>
+                        <div class="xmark"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

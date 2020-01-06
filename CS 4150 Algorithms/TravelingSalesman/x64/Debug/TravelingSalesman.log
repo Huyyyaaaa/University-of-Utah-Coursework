@@ -1,0 +1,5 @@
+﻿  TravelingSalesman.cpp
+C:\Users\aaron\Documents\cs4150\TravelingSalesman\TravelingSalesman.cpp(13,14): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+C:\Users\aaron\Documents\cs4150\TravelingSalesman\TravelingSalesman.cpp(32,14): warning C4244: 'argument': conversion from 'double' to 'const unsigned __int64', possible loss of data
+C:\Users\aaron\Documents\cs4150\TravelingSalesman\TravelingSalesman.cpp(33,14): warning C4244: 'argument': conversion from 'double' to 'unsigned __int64', possible loss of data
+  TravelingSalesman.vcxproj -> C:\Users\aaron\Documents\cs4150\x64\Debug\TravelingSalesman.exe

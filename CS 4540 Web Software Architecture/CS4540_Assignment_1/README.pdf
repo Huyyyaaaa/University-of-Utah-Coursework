@@ -1,0 +1,22 @@
+Author:    Aaron Templeton
+Date:      8/25/2019
+Course:    CS 4540, University of Utah, School of Computing
+Copyright: CS 4540 and Aaron Templeton - This work may not be copied for use in Academic Coursework.
+
+Repo Link:
+
+https://bitbucket.org/atemp21/cs4540
+
+UI/UX choices:
+
+overview page: wanted to split up each courses learning outcomes and evalutaion metrics completions by using checkmarks and x-marks
+and also made it easy to contact the professor and view the courses page. put a total percentage of the learning outcome completion and
+the evalutaion metric completion at top of page. simple and intuitve design.
+
+course page: split each learning outcome into a container with simple and intuitive view of assignments, 
+exams and student samples in each learning outcome. there is a form for a professor to upload more evalutaion metrics (dummy form).
+put a learning outcome status if the learning outcome has all 3 evalutaion metrics complete/uploaded
+
+references:
+
+Meta tags: https://www.w3schools.com/tags/tag_meta.asp

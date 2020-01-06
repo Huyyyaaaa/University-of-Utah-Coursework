@@ -1,0 +1,266 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+
+}
+
+<div class="card container-fluid py-4" id="calendar"></div>
+
+<div id="addModal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add Appointment</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="addForm">
+                    @Html.AntiForgeryToken()
+                    <div class="form-group">
+                        <input type="text" id="addTitle" name="Title" class="form-control" placeholder="Title" onblur="validateRequired(this)" />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Location</label>
+                        <select id="addLocation" class="form-control" asp-items="ViewBag.Locations"></select>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Category</label>
+                        <select id="addCategory" class="form-control" asp-items="ViewBag.Categories"></select>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" id="addDescription" name="Description" placeholder="Description" onblur="validateRequired(this)"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="starttime">Start Time</label>
+                        <input type="datetime-local" name="StartTime" id="starttime" value="Select Date"  class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="endtime">End Time</label>
+                        <input type="datetime-local" name="EndTime" id="endtime" value="Select Date" class="form-control" />
+                    </div>
+                    <label>Recurrence</label>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="daily" name="Recurrence" onclick="showRecurrences()" class="custom-control-input">
+                        <label class="custom-control-label" for="daily">Daily</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="weekly" name="Recurrence" onclick="showRecurrences()" class="custom-control-input">
+                        <label class="custom-control-label" for="weekly">Weekly</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="none" name="Recurrence" onclick="hideRecurrences()" class="custom-control-input">
+                        <label class="custom-control-label" for="none">None</label>
+                    </div>
+                    <div id="recur-box" class="">
+                        <label>Weekdays to Recur</label>
+                        <div class="form-check form-check">
+                            <input class="form-check-input" type="checkbox" id="day0check" value="0">
+                            <label class="form-check-label" for="day0check">Sunday</label>
+                        </div>
+                        <div class="form-check form-check">
+                            <input class="form-check-input" type="checkbox" id="day1check" value="1">
+                            <label class="form-check-label" for="day1check">Monday</label>
+                        </div>
+                        <div class="form-check form-check">
+                            <input class="form-check-input" type="checkbox" id="day2check" value="2">
+                            <label class="form-check-label" for="day2check">Tuesday</label>
+                        </div>
+                        <div class="form-check form-check">
+                            <input class="form-check-input" type="checkbox" id="day3check" value="3">
+                            <label class="form-check-label" for="day3check">Wednesday</label>
+                        </div>
+                        <div class="form-check form-check">
+                            <input class="form-check-input" type="checkbox" id="day4check" value="4">
+                            <label class="form-check-label" for="day4check">Thursday</label>
+                        </div>
+                        <div class="form-check form-check">
+                            <input class="form-check-input" type="checkbox" id="day5check" value="5">
+                            <label class="form-check-label" for="day5check">Friday</label>
+                        </div>
+                        <div class="form-check form-check">
+                            <input class="form-check-input" type="checkbox" id="day6check" value="6">
+                            <label class="form-check-label" for="day6check">Saturday</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="endtime">Recurrence End Time</label>
+                            <input type="datetime-local" name="EndDate" id="endRecur" value="Select Date" class="form-control" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="add-form-submit" type="submit" class="btn btn-primary" data-dismiss="modal">Save</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="viewModal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <dl>
+                    <dt>Description</dt>
+                    <dd id="event-desc"></dd>
+                    <dt>Location</dt>
+                    <dd id="event-loc"></dd>
+                    <dt>Time</dt>
+                    <dd id="event-time"></dd>
+                    <dt>Category</dt>
+                    <dd id="event-cat"></dd>
+                    <dt>Recurrence</dt>
+                    <dd id="event-recur"></dd>
+                </dl>
+            </div>
+            <div class="modal-footer">
+                <button id="goEditBtn" type="button" class="btn btn-warning" data-dismiss="modal">Edit</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="deleteModal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"></h5>
+                <span style="visibility: hidden" id="deleteModalEventId"></span>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h5>Are you sure you wish to delete this appointment?</h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" onclick="deleteAppointment()" class="btn btn-danger">Yes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="editModal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit Appointment</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="editForm">
+                    <input type="hidden" id="apptId" />
+                    @Html.AntiForgeryToken()
+                    <div class="form-group">
+                        <input type="text" id="editTitle" name="Title" class="form-control" placeholder="Title" onblur="validateRequired(this)" />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Location</label>
+                        <select id="editLocation" class="form-control" asp-items="ViewBag.Locations"></select>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Category</label>
+                        <select id="editCategory" class="form-control" asp-items="ViewBag.Categories"></select>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" id="editDescription" name="Description" placeholder="Description" onblur="validateRequired(this)"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="starttime">Start Time</label>
+                        <input type="datetime-local" name="StartTime" id="editStart" value="Select Date" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="endtime">End Time</label>
+                        <input type="datetime-local" name="EndTime" id="editEnd" value="Select Date" class="form-control" />
+                    </div>
+                    <label>Recurrence</label>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="dailyedit" name="RecurrenceEdit" onclick="showRecurrences()" class="custom-control-input">
+                        <label class="custom-control-label" for="dailyedit">Daily</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="weeklyedit" name="RecurrenceEdit" onclick="showRecurrences()" class="custom-control-input">
+                        <label class="custom-control-label" for="weeklyedit">Weekly</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="noneedit" name="RecurrenceEdit" onclick="hideRecurrences()" class="custom-control-input">
+                        <label class="custom-control-label" for="noneedit">None</label>
+                    </div>
+                    <div id="recur-box-edit" class="">
+                        <label>Weekdays to Recur</label>
+                        <div class="form-check form-check">
+                            <input class="form-check-input" type="checkbox" id="day0checkedit" value="0">
+                            <label class="form-check-label" for="day0checkedit">Sunday</label>
+                        </div>
+                        <div class="form-check form-check">
+                            <input class="form-check-input" type="checkbox" id="day1checkedit" value="1">
+                            <label class="form-check-label" for="day1checkedit">Monday</label>
+                        </div>
+                        <div class="form-check form-check">
+                            <input class="form-check-input" type="checkbox" id="day2checkedit" value="2">
+                            <label class="form-check-label" for="day2check">Tuesday</label>
+                        </div>
+                        <div class="form-check form-check">
+                            <input class="form-check-input" type="checkbox" id="day3checkedit" value="3">
+                            <label class="form-check-label" for="day3checkedit">Wednesday</label>
+                        </div>
+                        <div class="form-check form-check">
+                            <input class="form-check-input" type="checkbox" id="day4checkedit" value="4">
+                            <label class="form-check-label" for="day4checkedit">Thursday</label>
+                        </div>
+                        <div class="form-check form-check">
+                            <input class="form-check-input" type="checkbox" id="day5checkedit" value="5">
+                            <label class="form-check-label" for="day5checkedit">Friday</label>
+                        </div>
+                        <div class="form-check form-check">
+                            <input class="form-check-input" type="checkbox" id="day6checkedit" value="6">
+                            <label class="form-check-label" for="day6checkedit">Saturday</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="endtime">Recurrence End Time</label>
+                            <input type="datetime-local" name="EndDate" id="editendRecur" value="Select Date" class="form-control" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="edit-form-submit" type="submit" class="btn btn-primary" data-dismiss="modal">Save</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.contextMenu.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.contextMenu.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.ui.position.js"></script>
+    <script src="~/js/callendar.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+          
+            $("input[type='datetime-local']").flatpickr({
+                enableTime: true,
+                dateFormat: "m/d/Y h:i K",
+                defaultDate: new Date()
+            });
+
+
+        });
+    </script>
+}

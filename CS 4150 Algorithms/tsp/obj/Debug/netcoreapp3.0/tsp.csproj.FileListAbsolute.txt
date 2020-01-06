@@ -1,0 +1,11 @@
+C:\Users\aaron\Documents\cs4150\tsp\bin\Debug\netcoreapp3.0\tsp.exe
+C:\Users\aaron\Documents\cs4150\tsp\bin\Debug\netcoreapp3.0\tsp.deps.json
+C:\Users\aaron\Documents\cs4150\tsp\bin\Debug\netcoreapp3.0\tsp.runtimeconfig.json
+C:\Users\aaron\Documents\cs4150\tsp\bin\Debug\netcoreapp3.0\tsp.runtimeconfig.dev.json
+C:\Users\aaron\Documents\cs4150\tsp\bin\Debug\netcoreapp3.0\tsp.dll
+C:\Users\aaron\Documents\cs4150\tsp\bin\Debug\netcoreapp3.0\tsp.pdb
+C:\Users\aaron\Documents\cs4150\tsp\obj\Debug\netcoreapp3.0\tsp.csprojAssemblyReference.cache
+C:\Users\aaron\Documents\cs4150\tsp\obj\Debug\netcoreapp3.0\tsp.AssemblyInfoInputs.cache
+C:\Users\aaron\Documents\cs4150\tsp\obj\Debug\netcoreapp3.0\tsp.AssemblyInfo.cs
+C:\Users\aaron\Documents\cs4150\tsp\obj\Debug\netcoreapp3.0\tsp.dll
+C:\Users\aaron\Documents\cs4150\tsp\obj\Debug\netcoreapp3.0\tsp.pdb

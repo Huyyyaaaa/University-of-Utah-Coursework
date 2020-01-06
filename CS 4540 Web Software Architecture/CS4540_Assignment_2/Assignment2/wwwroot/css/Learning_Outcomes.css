@@ -1,0 +1,93 @@
+﻿.table thead th {
+    text-transform: uppercase !important;
+    color: white;
+    border-top: none;
+}
+.table thead{
+    background-color: darkslategray;
+    border:none;
+}
+.table thead th:first-child{
+    border-radius:  15px 0 0 0;
+}
+.table thead th:last-child{
+    border-radius: 0 15px 0 0;
+}
+.table tbody tr:last-child td:first-child{
+    border-radius: 0 0 0 15px;
+}
+.table tbody tr:last-child td:last-child{
+   border-radius: 0 0 15px 0;
+}
+.table tbody tr:last-child {
+    border-radius: 0 0 15px 15px;
+}
+.table{
+    text-align:center;
+}
+    .table tbody tr:nth-child(odd) {
+        background-color: #efefef;
+    }
+    .table tbody tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+    .table tbody tr:hover {
+        background-color: #dedede;
+    }
+
+dl dt{
+    text-transform: uppercase;
+    border-bottom: 1px solid gray;
+    margin-bottom: 3px;
+    color: gray;
+}
+dd{
+    padding: 5px;
+}
+#login-container {
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #e6e6e6;
+    padding: 20px;
+}
+#login-container form{
+    width: 75%;
+    margin: 0 auto;
+}
+.metric-back {
+    background-color: #dedede;
+}
+.metric-front {
+    background-color: #67a705;
+    color: white;
+    display: block;
+}
+#percent-front{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width:100%;
+    height:100%;
+
+}
+    #percent-front svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+
+    .note-status{
+        font-size: 12px;
+        padding: 0;
+        margin: 0;
+    }
+    .modified{
+        font-size: 12px;
+        padding: 0;
+        margin: 0;
+    }

@@ -1,0 +1,42 @@
+﻿<!--
+  Author:    Aaron Templeton
+  Date:      9/27/19
+  Course:    CS 4540, University of Utah, School of Computing
+  Copyright: CS 4540 and Aaron Templeton - This work may not be copied for use in Academic Coursework.
+
+  I, Aaron Templeton, certify that I wrote this code from scratch and did not copy it in part or whole from
+  another source.  Any references used in the completion of the assignment are cited in my README file.
+
+
+-->
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Testing Links</h1>
+<hr />
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4">
+            <h2>Admins</h2>
+            <a asp-controller="UsersPermissions" asp-action="Index">View/Update Users and Permissions</a>
+            <br />
+            <a asp-controller="Courses" asp-action="Index">View/Update Courses</a>
+            <br />
+            <a asp-controller="LearningOutcomes" asp-action="ByCourse" asp-route-number="3500">View/Update Learning Outcomes</a>
+        </div>
+        <div class="col-4">
+            <h2>Instructors</h2>
+            <a asp-controller="Courses" asp-action="Index">View My Courses</a>
+            <br />
+            <a asp-controller="Courses" asp-action="Details" asp-route-id="1">View a Course Detail Page (Instructor Jim's Course)</a>
+        </div>
+        <div class="col-4">
+            <h2>Chairs</h2>
+            <a asp-controller="Common" asp-action="Chair">Department Overview</a>
+        </div>
+    </div>
+</div>
+

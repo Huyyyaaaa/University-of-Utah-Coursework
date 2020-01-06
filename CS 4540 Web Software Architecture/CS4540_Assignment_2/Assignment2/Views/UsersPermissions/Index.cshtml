@@ -1,0 +1,197 @@
+﻿<!--
+  Author:    Aaron Templeton
+  Date:      9/27/19
+  Course:    CS 4540, University of Utah, School of Computing
+  Copyright: CS 4540 and Aaron Templeton - This work may not be copied for use in Academic Coursework.
+
+  I, Aaron Templeton, certify that I wrote this code from scratch and did not copy it in part or whole from
+  another source.  Any references used in the completion of the assignment are cited in my README file.
+
+
+-->
+@model dynamic
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<h1>Users and Permissions</h1>
+<hr />
+<br />
+<div class="container">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>User</th>
+                <th>Admin</th>
+                <th>Chair</th>
+                <th>Instructor</th>
+            </tr>
+        </thead>
+        <tbody>  
+            <tr>
+                <td colspan="4">
+                    <div class="spinner-grow" role="status">
+                        <span  class="sr-only">Loading...</span>
+                    </div>
+                </td>
+            </tr>
+
+            @*@foreach (var item in Model.users)
+        {
+        <tr>
+            <td>@item.Key</td>
+            @for (var i = 0; i < 3; i++)
+            {
+                if(i==0 && item.Value.Contains("Admin"))
+                {
+                    <td>
+                       <div class="text-center custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="@item.Key-@i" checked>
+                            <label class="custom-control-label" for="@item.Key-@i"></label>
+                        </div>
+                    </td>
+                }
+                else if(i == 1 && item.Value.Contains("Chair"))
+                {
+                    <td>
+                        <div class="text-center custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="@item.Key-@i" checked>
+                            <label class="custom-control-label" for="@item.Key-@i"></label>
+                        </div>
+                    </td>
+                }
+                else if(i==2 && item.Value.Contains("Instructor"))
+                {
+                    <td>
+                        <div class="text-center custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="@item.Key-@i" checked>
+                            <label class="custom-control-label" for="@item.Key-@i"></label>
+                        </div>
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        <div class="text-center custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="@item.Key-@i">
+                            <label class="custom-control-label" for="@item.Key-@i"></label>
+                        </div>
+                    </td>
+                }
+            }
+        </tr>
+        }*@
+        </tbody>
+    </table>
+</div>
+
+@section Scripts
+{
+<script text="text/javascript">
+
+    $(document).ready(function () {
+
+        loadTable();
+
+        $(document).on('click', 'input',function () {
+            var id = $(this).attr('id').split("-");
+            ajaxChangeRole(id[0], id[1], $(this));
+        });
+
+    });
+
+    async function ajaxChangeRole(user, num, s) {
+        const { value: accept } = await Swal.fire({
+            title: 'Change Role?',
+            text: 'Are you sure you want to change roles?',
+            type: 'question',
+            confirmButtonText: "Yes",
+            showCancelButton: true,
+            cancelButtonText: 'Cancel'
+        });
+        if (accept) {
+            var userData = { User: user, Num: num };
+            $.ajax({
+                url: "UsersPermissions/changeRole",
+                method: "POST",
+                dataType: 'json',
+                contentType: 'application/json; charset=utf-8',
+                data: JSON.stringify(userData),
+            }).done(function (result) {
+                JSON.stringify(result);
+                if (result.success === false) {
+                    Swal.fire({
+                        title: "Denied!",
+                        text: 'Cannot remove only Admin',
+                        type: 'error',
+                        confirmButtonText: 'Ok'
+                    })
+                } else {
+                    Swal.fire({
+                        title: "Success!",
+                        text: 'Successfully updated role!',
+                        type: 'success',
+                        confirmButtonText: 'Ok'
+                    });
+                }
+                loadTable();
+            }).fail(function (jqXHR, textStatus, error) {
+                Swal.fire({
+                    title: 'Error',
+                    text: 'There was an error. Try again or contact administrator',
+                    type: 'error',
+                    confirmButtonText: 'Ok'
+                })
+            })
+        }
+        else {
+            loadTable();
+        }
+        
+    }
+
+    function loadTable() {
+        $.ajax({
+            url: 'UsersPermissions/getUsersRoles',
+            method: "GET"
+        }).done(function (res) {
+            var html="";
+            $.each(res.data, function (key, val) {
+                 html += "<tr><td>" + val.name + "</td>";
+                for (var i = 0; i < 3; i++) {
+                    if ($.inArray("Admin", val.roles)!=-1 && i == 0) {
+                        html += '<td> <div class="text-center custom-control custom-switch">';
+                        html += '<input type="checkbox" class="custom-control-input" id="' + val.name+'-'+ i + '" checked>';
+                        html += '<label class="custom-control-label" for="' + val.name+'-'+ i + '" ></label>';
+                        html+=  '</div></td>';
+                    }
+                    else if (i === 1 && $.inArray("Chair", val.roles)!=-1) {
+                        html += '<td> <div class="text-center custom-control custom-switch">';
+                        html += '<input type="checkbox" class="custom-control-input" id="' + val.name + '-' + i + '" checked>';
+                        html += '<label class="custom-control-label" for="' + val.name + '-' + i + '" ></label>';
+                        html += '</div></td>';
+                    }
+                    else if (i === 2 && $.inArray("Instructor", val.roles)!=-1) {
+                        html += '<td> <div class="text-center custom-control custom-switch">';
+                        html += '<input type="checkbox" class="custom-control-input" id="' + val.name + '-' + i + '" checked>';
+                        html += '<label class="custom-control-label" for="' + val.name + '-' + i + '" ></label>';
+                        html += '</div></td>';
+                    }
+                    else {
+                        html += '<td> <div class="text-center custom-control custom-switch">';
+                        html += '<input type="checkbox" class="custom-control-input" id="' + val.name + '-' + i + '">';
+                        html += '<label class="custom-control-label" for="' + val.name + '-' + i + '" ></label>';
+                        html += '</div></td>';
+                    }
+                }
+                html += "</tr>";
+            });
+            $("tbody").html(html);
+            })
+        }
+
+</script>
+}

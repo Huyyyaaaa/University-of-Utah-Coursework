@@ -1,0 +1,118 @@
+<!--
+  Author:    Aaron Templeton
+  Date:      8/25/2019
+  Course:    CS 4540, University of Utah, School of Computing
+  Copyright: CS 4540 and Aaron Templeton - This work may not be copied for use in Academic Coursework.
+ 
+  I, Aaron Templeton, certify that I wrote this code from scratch and did not copy it in part or whole from 
+  another source.  Any references used in the completion of the assignment are cited in my README file.
+ 
+  File Contents
+ 
+     webpage for the professors view of the course learning outcomes and evaluation metrics
+-->
+
+<html>
+
+<head>
+    <title>CS 3200</title>
+    <link rel="stylesheet" href="default.css">
+    <meta name="Author" content="Aaron Templeton">
+    <meta name="description" content="professor can view course learning outcomes and evaluation metrics">
+    <meta name="keywords" content="HTML,CSS">
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div id="main">
+        <div id="course-name">
+            <h1>CS 3200</h1>
+            <h3>Scientific Computing</h3>
+        </div>
+       
+        <div class="form-container">
+            <h4>Upload Evalutaion Metric:</h4>
+            <form action="#" method="">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name">
+                <label for="lo">Learning Outcome</label>
+                <select name="lo" id="lo-select">
+                    <option value="polynomial-int">Polynomial Interpolation</option>
+                    <option value="finite-diff">Finite Differences</option>
+                    <option value="qr-decomp">QR Decomposition</option>
+                    <option value="svd-leastsquares">SVD for Least Squares</option>
+                </select>
+                <label for="lo">Type</label>
+                <select name="lo" id="lo-select">
+                    <option value="assignment">Assignment</option>
+                    <option value="Exam">Exam</option>
+                    <option value="student">Student Work</option>
+                </select>
+                <div class="upload-btn-wrapper">
+                    <button class="btn">choose a file</button>
+                    <input type="file" name="myfile" />
+                </div>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <h2 style="font-size: 3em;">Learning Outcomes</h2>
+        <div class="learning-outcome">
+            <h2>Polynomial Interpolation</h2>
+            <p class="complete">Complete</p>
+            <div>
+                <div>Assignment</div>
+                <div>Exam</div>
+                <div>Student Sample(s)</div>
+            </div>
+            <div>
+                <a  href="/assignments/This is the first assignment.pdf" target="_blank">Assignment 1</a>
+                <a target="_blank" href="/exams/Exam 1.pdf">Exam 1</a>
+                <a target="_blank" href="/samples/Student Sample 1.pdf">student sample 1</a>
+            </div>
+        </div>
+        <div class="learning-outcome">
+            <h2>Finite Differences</h2>
+            <p class="incomplete">Incomplete</p>
+            <div>
+                <div>Assignment</div>
+                <div>Exam</div>
+                <div>Student Sample(s)</div>
+            </div>
+            <div>
+                <a href="/assignments/second.pdf" target="_blank">Assignment 2</a>
+                <a href="/exams/Exam 2.pdf " target="_blank">Exam 2</a>
+                <a href=""></a>
+            </div>
+        </div>
+        <div class="learning-outcome">
+            <h2>QR Decomposition</h2>
+            <p class="complete">Complete</p>
+            <div>
+                <div>Assignment</div>
+                <div>Exam</div>
+                <div>Student Sample(s)</div>
+            </div>
+            <div>
+                <a href="/assignments/third.pdf" target="_blank">Assignment 3</a>
+                <a href="/exams/Exam 3.pdf ">Exam 3</a>
+                <a href="/samples/Student Sample 3.pdf">student sample 3</a>
+            </div>
+        </div>
+        <div class="learning-outcome">
+            <h2>SVD for Least Squares</h2>
+            <p class="incomplete">Incomplete</p>
+            <div>
+                <div>Assignment</div>
+                <div>Exam</div>
+                <div>Student Sample(s)</div>
+            </div>
+            <div>
+                <a href=""></a>
+                <a href="http://"></a>
+                <a href="http://"></a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

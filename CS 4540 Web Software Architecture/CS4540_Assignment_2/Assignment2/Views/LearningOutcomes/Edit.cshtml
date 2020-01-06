@@ -1,0 +1,39 @@
+﻿@model Assignment2.Models.LearningOutcome
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit Learning Outcome</h1>
+<h4>@(Model.name)</h4>
+<hr />
+<div class="row">
+    <div class="container">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="LearningOutcomeId" />
+            <div class="form-group">
+                <label asp-for="name" class="control-label">Title</label>
+                <input asp-for="name" class="form-control" />
+                <span asp-validation-for="name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="description" class="control-label">Description</label>
+                <textarea asp-for="description" class="form-control" ></textarea>
+                <span asp-validation-for="description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CourseNum" class="control-label">Course Number</label>
+                <input asp-for="CourseNum" class="form-control" />
+                <span asp-validation-for="CourseNum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-outline-primary" />
+                <a class="btn btn-secondary" asp-action="ByCourse" asp-route-number="@(Model.CourseNum)">Cancel</a>
+                <a class="btn btn-danger" style="float:right;" asp-action="Delete" asp-route-id="@(Model.LearningOutcomeId)">Delete</a>
+            </div>
+        </form>
+    </div>
+</div>
+

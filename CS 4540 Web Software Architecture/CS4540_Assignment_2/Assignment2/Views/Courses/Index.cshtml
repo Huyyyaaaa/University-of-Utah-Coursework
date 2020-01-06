@@ -1,0 +1,81 @@
+﻿<!--
+  Author:    Aaron Templeton
+  Date:      9/27/19
+  Course:    CS 4540, University of Utah, School of Computing
+  Copyright: CS 4540 and Aaron Templeton - This work may not be copied for use in Academic Coursework.
+
+  I, Aaron Templeton, certify that I wrote this code from scratch and did not copy it in part or whole from
+  another source.  Any references used in the completion of the assignment are cited in my README file.
+
+
+-->
+@model IEnumerable<Assignment2.Models.Course>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var x = User.Claims.Where(o => o.Value == "Admin");
+    var admin = false;
+    if (x.Count() > 0) { admin = true; }
+}
+
+<h1>Courses</h1>
+<h2>@Model.First().department</h2>
+<br />
+@if (admin)
+{
+    <a class="btn btn-outline-primary" asp-action="Create">Add Course</a>
+    <a class="btn btn-outline-secondary" asp-action="Create" asp-controller="LearningOutcomes">Add Learning Outcome</a>
+    <br />
+}
+<br />
+<div class="container">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.number)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.professor)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.semeseter)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.year)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.number)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.professor)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.semeseter)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.year)
+                    </td>
+                    <td>
+                        <a class="btn btn-sm btn-outline-primary" asp-action="Details" asp-route-id="@item.CourseId">Details</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

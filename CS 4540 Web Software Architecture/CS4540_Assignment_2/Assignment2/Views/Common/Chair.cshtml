@@ -1,0 +1,93 @@
+﻿@model dynamic
+@{
+    ViewData["Title"] = "Chair";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var totalPercent = 0;
+    var number = 0;
+    foreach(var item in Model.Courses)
+    {
+        number++;
+        totalPercent += item.metricPercent;
+    }
+
+    totalPercent = totalPercent / number;
+    var circ = 70 * 2 * 3.14;
+    double offset = totalPercent *.01;
+    offset = offset * circ;
+    offset = circ - offset;
+}
+
+<h1>Department Overview</h1>
+<hr/>
+<br />
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2">
+            <div id="percent-front">
+                <svg class="ring"
+                     width="200"
+                     height="200">
+                    <circle class="ring-inner"
+                            stroke="#dedede"
+                            stroke-width="8"
+                            fill="transparent"
+                            r="70"
+                            cx="50%"
+                            cy="50%"
+                            >
+
+                    </circle>
+                    <circle class="ring-inner"
+                            stroke="orange"
+                            stroke-width="8"
+                            stroke-dashoffset="@offset"
+                            stroke-dasharray="@circ @circ"
+                            fill="transparent"
+                            r="70"
+                            cx="50%"
+                            cy="50%"
+                            >
+                    </circle>
+                    <text x="50%" y="35%" fill="orange" text-anchor="middle" dominant-baseline="middle">Metrics:</text>
+                    <text x="50%" y="50%" fill="orange" text-anchor="middle" font-size="2em" dominant-baseline="middle">@totalPercent%</text>
+                </svg>
+            </div>
+        </div>
+        <div class="col-10">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Course</th>
+                        <th>Number</th>
+                        <th>Professor</th>
+                        <th>Semester</th>
+                        <th>Year</th>
+                        <th>Metrics %</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var item in Model.Courses)
+                    {
+                        <tr>
+                            <td>@item.name</td>
+                            <td>@item.number</td>
+                            <td>@item.professor</td>
+                            <td>@item.semeseter</td>
+                            <td>@item.year</td>
+                            <td>
+                                <div class="metric-back">
+                                    <span style="width: @item.metricPercent%" class="metric-front">@item.metricPercent%</span>
+                                </div>
+                            </td>
+                            <td>
+                                <a class="btn btn-sm btn-outline-primary" asp-controller="Courses" asp-action="Details" asp-route-id="@(item.CourseId)">Details</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

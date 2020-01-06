@@ -1,0 +1,243 @@
+﻿<!--
+  Author:    Aaron Templeton
+  Date:      9/27/19
+  Course:    CS 4540, University of Utah, School of Computing
+  Copyright: CS 4540 and Aaron Templeton - This work may not be copied for use in Academic Coursework.
+
+  I, Aaron Templeton, certify that I wrote this code from scratch and did not copy it in part or whole from
+  another source.  Any references used in the completion of the assignment are cited in my README file.
+
+
+-->
+@model IEnumerable<Assignment2.Models.LearningOutcome>
+
+@{
+    ViewData["Title"] = "Learning Outcomes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var x = User.Claims.Where(o => o.Value == "Admin");
+    var admin = false;
+    if (x.Count() > 0) { admin = true; }
+}
+
+<h1>Learning Outcomes</h1>
+@if (Model.Any())
+{
+    <h2>@ViewData["cname"] - @(Model.First().CourseNum)</h2>
+}
+<a class="btn btn-outline-primary" asp-controller="Courses" asp-action="Details" asp-route-id="@ViewData["cid"]">Back to Course</a>
+
+<div class="container">
+
+    <div class="jumbotron">
+        <dl class="container-fluid">
+
+            @foreach (var item in Model)
+            {
+                <dt id="@(item.LearningOutcomeId)">@Html.DisplayFor(modelItem => item.name) </dt>
+                @if (admin)
+                {
+                    <a class="btn btn-sm btn-outline-success" style="float:right;" asp-action="Edit" asp-route-id="@(item.LearningOutcomeId)">Edit</a>
+                }
+                <dd>@Html.DisplayFor(modelItem => item.description)</dd>
+
+                <dd class="row">
+                    <div class="col">
+                        Evaluation Metrics:
+                    </div>
+                    <div class="col"><a href="~/files/assignment.pdf" class="btn btn-link" target="_blank">Assignment</a></div>
+                    <div class="col"><a href="~/files/Exam.pdf" class="btn btn-link" target="_blank">Exam</a></div>
+                    <div class="col"><a href="~/files/student.pdf" class="btn btn-link" target="_blank">Student Work</a></div>
+                </dd>
+                <dd class="lonote" id="@(item.LearningOutcomeId)">
+                    <div>LO Comment</div>
+                    <hr/>
+                    <div class="note-box"></div>
+                </dd>
+            }
+        </dl>
+    </div>
+</div>
+
+@section Scripts
+{
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            getNotes();
+
+        })
+
+        function getNotes() {
+            var ids = [];
+            $("dt").each(function () {
+                ids.push($(this).attr('id'))
+            })
+
+            $.ajax({
+                url: '/LearningOutcomeNotes/ById',
+                method: 'POST',
+                data: JSON.stringify(ids),
+                dataType: 'json',
+                contentType: 'application/json'
+            }).done(function (res) {
+                loadNotes(res.notes);
+                }).fail(function () {
+
+                })
+        }
+
+        function loadNotes(notes) {
+            console.log(notes)
+            var boxes = $(".note-box");
+            for (var i = 0; i < notes.length; i++) {
+                if (notes[i] != null) {
+                    var color = "black";
+                    if (notes[i].lastEditChair == true) color = "red";
+                    var html = "";
+                    html += '<a id="" class="btn btn-sm btn-outline-primary edit-note-btn" style="float:right;" href="#">Edit Note</a>';
+                    html += '<p id="' + notes[i].learningOutcomeNoteId + '" style="color:' + color + ';">' + notes[i].note + '</p>';
+                    html += '<p class="modified">last modified: ' + new Date(notes[i].modifiedDate).toLocaleDateString() + ' ' + new Date(notes[i].modifiedDate).toLocaleTimeString() + '</p>';
+                    boxes[i].innerHTML = html;
+                }
+                else {
+                    var html = "";
+                    html += '<a id="" class="btn btn-sm btn-outline-primary add-note-btn" href="#">Add Note</a>';
+                    boxes[i].innerHTML = html;
+                }
+            }
+        }
+
+        $(document).on('click', '.edit-note-btn', function (e) {
+            e.preventDefault();
+            var notebox = $(this).parent();
+            var note = notebox.find("p").first().html();
+            var id = notebox.find("p").first().attr("id");
+            notebox.html("<textarea id='"+id+"' style='width:100%'>" + note + "</textarea>");
+            $(this).remove();
+            notebox.append('<a id="" class="save-btn btn btn-outline-primary btn-sm" href="">Save</a>');
+            notebox.append('<a id="" class="cancel-btn btn btn-outline-secondary btn-sm" href="">Cancel</a>');
+        })
+
+        $(document).on('click', '.add-note-btn', function (e) {
+            e.preventDefault();
+            var notebox = $(this).parent();
+            notebox.html("<textarea style='width:100%'></textarea>");
+            $(this).remove();
+            notebox.append('<a id="" class="create-btn btn btn-outline-primary btn-sm" href="">Save</a>');
+            notebox.append('<a id="" class="cancel-btn btn btn-outline-secondary btn-sm" href="">Cancel</a>');
+        })
+
+        $(document).on('click', '.cancel-btn', function (e) {
+            e.preventDefault();
+            getNotes();
+        })
+
+        $(document).on('click', '.save-btn', function (e) {
+            e.preventDefault();
+            var x = $(this).parent();
+            saveNote(x);
+        })
+
+        $(document).on('click', '.create-btn', function (e) {
+            e.preventDefault();
+            var x = $(this).parent();
+            createNote(x);
+        })
+
+        function saveNote(box){
+            var note = box.find("textarea").first().val();
+            var id = box.find("textarea").first().attr('id');
+            var lid = box.parent().attr('id');
+            var enote = {
+                LearningOutcomeNoteId: id,
+                note: note,
+                lastEditChair: false,
+                LOId: lid
+            };
+            console.log(enote);
+            $.ajax({
+                url: '/LearningOutcomeNotes/Edit',
+                method: 'POST',
+                dataType: 'json',
+                contentType: 'application/json',
+                data: JSON.stringify(enote)
+            }).done(function (res) {
+                if (res.success = true) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'note successfully edited',
+                        confirmButtonText: 'Ok',
+                        type: 'success'
+                    });
+                }
+                else {
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'unable to edit note',
+                        confirmButtonText: 'Ok',
+                        type: 'error'
+                    });
+
+                    
+                }
+                getNotes();
+            }).fail(function () {
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'unable to edit note',
+                    confirmButtonText: 'Ok',
+                    type: 'error'
+                });
+                getNotes();
+            })
+        }
+
+        function createNote(box) {
+            var note = box.find("textarea").first().val();
+            var lid = box.parent().attr('id');
+            var cnote = {
+                note: note,
+                lastEditChair: false,
+                LOId: lid
+            };
+            $.ajax({
+                url: '/LearningOutcomeNotes/Create',
+                method: 'POST',
+                dataType: 'json',
+                contentType: 'application/json',
+                data: JSON.stringify(cnote)
+            }).done(function (res) {
+                if (res.success = true) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'note successfully created',
+                        confirmButtonText: 'Ok',
+                        type: 'success'
+                    });
+                }
+                else {
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'unable to create note',
+                        confirmButtonText: 'Ok',
+                        type: 'error'
+                    });
+
+                   
+                }
+                getNotes();
+                }).fail(function () {
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'unable to create note',
+                        confirmButtonText: 'Ok',
+                        type: 'error'
+                    });
+                    getNotes();
+                })
+        }
+
+    </script>
+}

@@ -1,0 +1,26 @@
+C:\Users\ATempleton\source\CS4540\Web Scraper\WebScraper\bin\Debug\WebScraper.exe.config
+C:\Users\ATempleton\source\CS4540\Web Scraper\WebScraper\bin\Debug\WebScraper.exe
+C:\Users\ATempleton\source\CS4540\Web Scraper\WebScraper\bin\Debug\WebScraper.pdb
+C:\Users\ATempleton\source\CS4540\Web Scraper\WebScraper\bin\Debug\WebDriver.dll
+C:\Users\ATempleton\source\CS4540\Web Scraper\WebScraper\bin\Debug\WebDriver.xml
+C:\Users\ATempleton\source\CS4540\Web Scraper\WebScraper\obj\Debug\WebScraper.csprojAssemblyReference.cache
+C:\Users\ATempleton\source\CS4540\Web Scraper\WebScraper\obj\Debug\WebScraper.Form1.resources
+C:\Users\ATempleton\source\CS4540\Web Scraper\WebScraper\obj\Debug\WebScraper.Properties.Resources.resources
+C:\Users\ATempleton\source\CS4540\Web Scraper\WebScraper\obj\Debug\WebScraper.csproj.GenerateResource.cache
+C:\Users\ATempleton\source\CS4540\Web Scraper\WebScraper\obj\Debug\WebScraper.csproj.CoreCompileInputs.cache
+C:\Users\ATempleton\source\CS4540\Web Scraper\WebScraper\obj\Debug\WebScraper.csproj.CopyComplete
+C:\Users\ATempleton\source\CS4540\Web Scraper\WebScraper\obj\Debug\WebScraper.exe
+C:\Users\ATempleton\source\CS4540\Web Scraper\WebScraper\obj\Debug\WebScraper.pdb
+C:\Users\aaron\Documents\CS 4540\Web Scraper\WebScraper\bin\Debug\WebScraper.exe.config
+C:\Users\aaron\Documents\CS 4540\Web Scraper\WebScraper\bin\Debug\WebScraper.exe
+C:\Users\aaron\Documents\CS 4540\Web Scraper\WebScraper\bin\Debug\WebScraper.pdb
+C:\Users\aaron\Documents\CS 4540\Web Scraper\WebScraper\bin\Debug\WebDriver.dll
+C:\Users\aaron\Documents\CS 4540\Web Scraper\WebScraper\bin\Debug\WebDriver.xml
+C:\Users\aaron\Documents\CS 4540\Web Scraper\WebScraper\obj\Debug\WebScraper.csprojAssemblyReference.cache
+C:\Users\aaron\Documents\CS 4540\Web Scraper\WebScraper\obj\Debug\WebScraper.Form1.resources
+C:\Users\aaron\Documents\CS 4540\Web Scraper\WebScraper\obj\Debug\WebScraper.Properties.Resources.resources
+C:\Users\aaron\Documents\CS 4540\Web Scraper\WebScraper\obj\Debug\WebScraper.csproj.GenerateResource.cache
+C:\Users\aaron\Documents\CS 4540\Web Scraper\WebScraper\obj\Debug\WebScraper.csproj.CoreCompileInputs.cache
+C:\Users\aaron\Documents\CS 4540\Web Scraper\WebScraper\obj\Debug\WebScraper.csproj.CopyComplete
+C:\Users\aaron\Documents\CS 4540\Web Scraper\WebScraper\obj\Debug\WebScraper.exe
+C:\Users\aaron\Documents\CS 4540\Web Scraper\WebScraper\obj\Debug\WebScraper.pdb
