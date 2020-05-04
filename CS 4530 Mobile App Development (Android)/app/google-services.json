@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "19604471743",
+    "firebase_url": "https://teamup-android-4b88d.firebaseio.com",
+    "project_id": "teamup-android-4b88d",
+    "storage_bucket": "teamup-android-4b88d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:19604471743:android:4f899989d5165360166b0a",
+        "android_client_info": {
+          "package_name": "com.example.teamup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "19604471743-893mvjc5mdpid922638gracnbku2iai7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDya-WZ9LoCwg9D4hqvWx72ei3yScPoNy8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "19604471743-893mvjc5mdpid922638gracnbku2iai7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

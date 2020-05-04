@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/line_row_7am"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="59dp"
+            android:layout_height="1dp"
+            android:background="@color/andriodDarkerGray"/>
+
+        <View
+            android:id="@+id/line_row_8am"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="59dp"
+            android:layout_height="1dp"
+            android:background="@color/andriodDarkerGray"/>
+
+        <View
+            android:id="@+id/line_row_9am"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="59dp"
+            android:layout_height="1dp"
+            android:layout_below="@id/line_row_8am"
+            android:background="@color/andriodDarkerGray"/>
+
+        <View
+            android:id="@+id/line_row_10am"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="59dp"
+            android:layout_height="1dp"
+            android:layout_below="@id/line_row_9am"
+            android:background="@color/andriodDarkerGray"/>
+
+        <View
+            android:id="@+id/line_row_11am"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="59dp"
+            android:layout_height="1dp"
+            android:layout_below="@id/line_row_10am"
+            android:background="@color/andriodDarkerGray"/>
+
+        <View
+            android:id="@+id/line_row_12pm"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="59dp"
+            android:layout_height="1dp"
+            android:layout_below="@id/line_row_11am"
+            android:background="@color/andriodDarkerGray"/>
+
+        <View
+            android:id="@+id/line_row_1pm"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="59dp"
+            android:layout_height="1dp"
+            android:layout_below="@id/line_row_12pm"
+            android:background="@color/andriodDarkerGray"/>
+
+        <View
+            android:id="@+id/line_row_2pm"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="59dp"
+            android:layout_height="1dp"
+            android:layout_below="@id/line_row_1pm"
+            android:background="@color/andriodDarkerGray"/>
+
+        <View
+            android:id="@+id/line_row_3pm"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="59dp"
+            android:layout_height="1dp"
+            android:layout_below="@id/line_row_2pm"
+            android:background="@color/andriodDarkerGray"/>
+
+        <View
+            android:id="@+id/line_row_4pm"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="59dp"
+            android:layout_height="1dp"
+            android:layout_below="@id/line_row_3pm"
+            android:background="@color/andriodDarkerGray"/>
+
+        <View
+            android:id="@+id/line_row_5pm"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="59dp"
+            android:layout_height="1dp"
+            android:layout_below="@id/line_row_4pm"
+            android:background="@color/andriodDarkerGray"/>
+
+        <View
+            android:id="@+id/line_row_6pm"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="59dp"
+            android:layout_height="1dp"
+            android:layout_below="@id/line_row_5pm"
+            android:background="@color/andriodDarkerGray"/>
+
+        <View
+            android:id="@+id/line_row_7pm"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="59dp"
+            android:layout_height="1dp"
+            android:layout_below="@id/line_row_6pm"
+            android:background="@color/andriodDarkerGray"/>
+
+        <View
+            android:id="@+id/line_row_8pm"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="59dp"
+            android:layout_height="1dp"
+            android:layout_below="@id/line_row_7pm"
+            android:background="@color/andriodDarkerGray"/>
+
+        <View
+            android:id="@+id/line_row_9pm"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="59dp"
+            android:layout_height="1dp"
+            android:layout_below="@id/line_row_8pm"
+            android:background="@color/andriodDarkerGray"/>
+
+        <View
+            android:id="@+id/line_row_10pm"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="59dp"
+            android:layout_height="1dp"
+            android:layout_below="@id/line_row_9pm"
+            android:background="@color/andriodDarkerGray"/>
+
+        <View
+            android:id="@+id/line_row_11pm"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="59dp"
+            android:layout_height="1dp"
+            android:layout_below="@id/line_row_10pm"
+            android:background="@color/andriodDarkerGray"/>
+
+        <View
+            android:id="@+id/line_row_12am"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="59dp"
+            android:layout_height="1dp"
+            android:layout_below="@id/line_row_11pm"
+            android:background="@color/andriodDarkerGray"/>
+
+        <View
+            android:id="@+id/line_row_end"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="52dp"
+            android:layout_height="1dp"
+            android:layout_below="@id/line_row_12am"
+            android:background="@color/andriodDarkerGray"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:baselineAligned="false">
+
+            <RelativeLayout
+                android:id="@+id/hour_Column_RelativeLayout"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.2">
+
+                <View
+                    android:id="@+id/hour_divider"
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:background="@color/andriodDarkerGray"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/mondayRecyclerView"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2">
+
+                <View
+                    android:id="@+id/monday_divider"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:background="@color/andriodDarkerGray"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/tuesday_Column_RelativeLayout"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2">
+
+                <View
+                    android:id="@+id/tuesday_divider"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:background="@color/andriodDarkerGray"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/wednesday_Column_RelativeLayout"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2">
+
+                <View
+                    android:id="@+id/wednesday_divider"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:background="@color/andriodDarkerGray"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/thursday_Column_RelativeLayout"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2">
+
+                <View
+                    android:id="@+id/thursday_divider"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:background="@color/andriodDarkerGray"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/friday_Column_RelativeLayout"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2">
+
+                <View
+                    android:id="@+id/friday_divider"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:background="@color/andriodDarkerGray"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

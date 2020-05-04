@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_teams">
+
+    <fragment
+        android:id="@+id/navigation_teams"
+        android:name="com.example.teamup.ui.teams.TeamsFragment"
+        android:label="@string/title_teams" 
+        tools:layout="@layout/fragment_teams" >
+        <action
+            android:id="@+id/action_navigation_teams_to_teamDetailsFragment"
+            app:destination="@id/teamDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.example.teamup.ui.notifications.NotificationsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_schedule"
+        android:name="com.example.teamup.ui.schedule.ScheduleFragment"
+        android:label="@string/title_schedule"
+        tools:layout="@layout/fragment_schedule" >
+        <action
+            android:id="@+id/action_navigation_schedule_to_coursesFragment"
+            app:destination="@id/coursesFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_messages"
+        android:name="com.example.teamup.ui.messages.MessagesFragment"
+        android:label="@string/title_messages"
+        tools:layout="@layout/fragment_messages" />
+
+    <fragment
+        android:id="@+id/coursesFragment"
+        android:name="com.example.teamup.CoursesFragment"
+        android:label="CoursesFragment" >
+        <action
+            android:id="@+id/action_coursesFragment_to_addCourseFragment"
+            app:destination="@id/addCourseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCourseFragment"
+        android:name="com.example.teamup.AddCourseFragment"
+        android:label="fragment_add_course"
+        tools:layout="@layout/fragment_add_course" />
+    <fragment
+        android:id="@+id/teamDetailsFragment"
+        android:name="com.example.teamup.TeamDetailsFragment"
+        android:label="fragment_team_details"
+        tools:layout="@layout/fragment_team_details" />
+    <fragment
+        android:id="@+id/messageSenderFragment"
+        android:name="com.example.teamup.MessageSenderFragment"
+        android:label="message_sender_fragment"
+        tools:layout="@layout/fragment_messagesender" />
+
+</navigation>

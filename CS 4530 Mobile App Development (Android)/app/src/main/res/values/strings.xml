@@ -1,0 +1,63 @@
+<resources>
+    <string name="app_name">Teamup</string>
+    <string name="title_activity_dashboard">Dashboard</string>
+    <string name="title_teams">Teams</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_schedule">Schedule</string>
+    <string name="title_messages">Messages</string>
+    <string name="title_requests">Requests</string>
+    <string name="month_date_template">Month</string>
+    <string name="year_date_template">Year</string>
+    <string name="week_date_template">##</string>
+    <string name="schedule_previous_day_button"><![CDATA[<]]></string>
+    <string name="schedule_current_day_button">Today</string>
+    <string name="column_sunday">Sun</string>
+    <string name="column_monday">Mon</string>
+    <string name="column_tuesday">Tue</string>
+    <string name="column_wednesday">Wed</string>
+    <string name="column_thursday">Thu</string>
+    <string name="column_friday">Fri</string>
+    <string name="column_saturday">Sat</string>
+    <string name="hour_12AM">12 am</string>
+    <string name="hour_1AM">1 am</string>
+    <string name="hour_2AM">2 am</string>
+    <string name="hour_3AM">3 am</string>
+    <string name="hour_4AM">4 am</string>
+    <string name="hour_5AM">5 am</string>
+    <string name="hour_6AM">6 am</string>
+    <string name="hour_7AM">7 am</string>
+    <string name="hour_8AM">8 am</string>
+    <string name="hour_9AM">9 am</string>
+    <string name="hour_10AM">10 am</string>
+    <string name="hour_11AM">11 am</string>
+    <string name="hour_12PM">12 pm</string>
+    <string name="hour_1PM">1 pm</string>
+    <string name="hour_2PM">2 pm</string>
+    <string name="hour_3PM">3 pm</string>
+    <string name="hour_4PM">4 pm</string>
+    <string name="hour_5PM">5 pm</string>
+    <string name="hour_6PM">6 pm</string>
+    <string name="hour_7PM">7 pm</string>
+    <string name="hour_8PM">8 pm</string>
+    <string name="hour_9PM">9 pm</string>
+    <string name="hour_10PM">10 pm</string>
+    <string name="hour_11PM">11 pm</string>
+    <string name="add_class">Add Class</string>
+    <string name="current_nav_item">Teams</string>
+    <string name="schedule_next_day_button"><![CDATA[>]]></string>
+    <string name="schedule_add_class_button">View Courses</string>
+    <string name="add_course_button">Add Course</string>
+    <string name="course_name_input">Course Name   e.g. CS 4500</string>
+    <string name="submit">Submit</string>
+    <string name="updating">updating...</string>
+    <string name="no_courses">No Courses Yet</string>
+    <string name="account_settings">Account Settings</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="notifications_admin_channel_name">Teamup</string>
+    <string name="notifications_admin_channel_description">Teamup notifications</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="empty_schedule_display">Nothing Scheduled</string>
+
+</resources>

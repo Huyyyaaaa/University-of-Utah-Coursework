@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddCourseFragment">
+
+
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="60dp"
+        android:fillViewport="false"
+        android:isScrollContainer="false"
+        android:padding="0dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/addCourseText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/add_course_button"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?android:attr/listDivider" />
+
+            <EditText
+                android:id="@+id/courseNameText"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:ems="10"
+                android:hint="@string/course_name_input"
+                android:inputType="textPersonName"
+                android:imeOptions="flagNoExtractUi"/>
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:gravity="center_vertical"
+                android:text="Choose a Semester"
+                android:imeOptions="flagNoExtractUi"/>
+
+            <Spinner
+                android:id="@+id/spinnerSemester"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:entries="@array/semesters"
+                android:imeOptions="flagNoExtractUi"/>
+
+            <CheckBox
+                android:id="@+id/checkBoxMonday"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="@string/column_monday" />
+
+            <CheckBox
+                android:id="@+id/checkBoxTuesday"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="@string/column_tuesday" />
+
+            <CheckBox
+                android:id="@+id/checkBoxWednesday"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="@string/column_wednesday" />
+
+            <CheckBox
+                android:id="@+id/checkBoxThursday"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="@string/column_thursday" />
+
+            <CheckBox
+                android:id="@+id/checkBoxFriday"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="@string/column_friday" />
+
+            <EditText
+                android:id="@+id/editTextStart"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:hint="Start Time"
+                android:imeOptions="flagNoExtractUi"/>
+
+            <EditText
+                android:id="@+id/editTextEnd"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:hint="End Time"
+                android:imeOptions="flagNoExtractUi"/>
+
+            <Button
+                android:id="@+id/buttonCourseSubmit"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="@string/submit" />
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

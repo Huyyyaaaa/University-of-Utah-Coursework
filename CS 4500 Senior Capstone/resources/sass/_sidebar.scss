@@ -1,0 +1,174 @@
+$sidebar-color: #4e73df;
+$link-color: #fff;
+$font-p: 'Open Sans', sans-serif;
+
+.sidebar{
+   // width: 250px;
+    height: 100%;
+    background-color: $sidebar-color;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: all 1s ease;
+    z-index: 1;
+    display: block;
+}
+#spark-app{
+   // margin-left: 250px;
+    transition: all 1s ease;
+}
+.sidebar.closed{
+    width: 75px;
+}
+#spark-app.closed{
+    margin-left: 75px;
+}
+.sidebar-divider{
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+//SIDEBAR LOGO
+.sidebar-logo{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#sidebar-logo-link{
+    padding-left: 10px;
+    width: 180px;
+    margin-right: 10px;
+    display: inline-block;
+}
+#sidebar-logo-link img{
+    width: 160px;
+}
+#sidebar-logo-link:hover{
+    text-decoration: none;
+    cursor: pointer;
+    background-color: $sidebar-color;
+}
+
+//HAMBURGER
+.hamburger-box{
+    height: 50px;
+    width: 40px;
+    display: inline-block;
+}
+.hamburger{
+    width: 23px;
+    height: 3px;
+    background-color: $link-color;
+    position: relative;
+    border-radius: 10px;
+    transition: all 1s ease;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.hamburger:before{
+    content: "";
+    top: -7px;
+    position: absolute;
+    width: 18px;
+    height: 3px;
+    background-color: $link-color;
+    right: 0;
+    transition: all 1s ease;
+    border-radius: 10px;
+
+}
+.hamburger:after{
+    content: "";
+    top: 7px;
+    position: absolute;
+    width: 18px;
+    height: 3px;
+    background-color: $link-color;
+    right: 0;
+    transition: all 1s ease;
+    border-radius: 10px;
+
+}
+
+.hamburger-box:hover{
+    cursor: pointer;
+}
+.hamburger.closed, .hamburger.closed::before, .hamburger.closed::after{
+    width: 23px;
+}
+
+//LINKS
+
+.sidebar-links{
+    list-style: none;
+    font-size: 16px;
+    padding: 0;
+}
+.sidebar-link:hover{
+    background-color: darken($sidebar-color, 5%);
+}
+.sidebar-link a{
+    font-family: $font-p;
+    color: $link-color;
+    width: 100%;
+    height: 100%;
+    display: block;
+    padding: 12px 0px 12px 25px;
+    font-weight: bold;
+}
+.sidebar-link i{
+    color: $link-color;
+    width: 10px;
+}
+.sidebar-link a:hover{
+    text-decoration: none;
+}
+.sidebar-text{
+    margin-left: 10px;
+    display: inline-block;
+    position: relative;
+}
+.sidebar-link a::after{
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 700;
+    display: inline-block;
+    content: '\f105';
+    color: $link-color;
+    position: absolute;
+    right: 15px;
+}
+
+
+/* ICONS */
+#dashboard-icon{
+    color: #62e5f3;
+}
+#material-icon{
+    color: $red;
+}
+#template-icon{
+    color: $yellow;
+}
+#project-icon{
+    color:$green
+}
+#bid-icon{
+    color: $cyan;
+}
+#task-icon{
+    color: #e09539;
+}
+#help-icon{
+    color: $gray;
+}
+
+/*
+*
+* SIDEBAR TRANSITIONS
+*
+*/
+
+
+

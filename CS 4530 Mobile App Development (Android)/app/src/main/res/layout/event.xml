@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayoutEvent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#5C9EC1"
+        android:orientation="vertical">
+
+<!--        <TextView-->
+<!--            android:id="@+id/textEventTime"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="2dp"-->
+<!--            android:layout_marginBottom="2dp"-->
+<!--            android:gravity="center"-->
+<!--            android:padding="0dp"-->
+<!--            android:text="10:00AM - 11:00AM"-->
+<!--            android:textColor="#FFFFFF"-->
+<!--            android:textSize="10sp"-->
+<!--            android:textStyle="bold" />-->
+
+    <TextView
+        android:id="@+id/textCourseEvent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/androidLightGray"
+        android:gravity="center"
+        android:text="CS 4500"
+        android:textColor="@color/MoreDarkerGray"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+    </LinearLayout>
